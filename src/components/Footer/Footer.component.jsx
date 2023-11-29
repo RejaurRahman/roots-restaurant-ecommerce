@@ -13,15 +13,22 @@ import "./Footer.styles.scss"
 
 library.add(
   faAngleUp,
-  fab,
+  fab
 )
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+
   return (
     <footer className="footer">
-      <div className="footer--backtop">
+      <div className="footer--backtop" onClick={handleScrollToTop}>
         <FontAwesomeIcon icon={["fas", "fa-angle-up"]} size="2x" />
       </div>
       <div className="container footer-container">
