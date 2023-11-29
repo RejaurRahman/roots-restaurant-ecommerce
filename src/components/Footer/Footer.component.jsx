@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import Logo from "../../assets/images/logo.png"
 
+import data from "../../data/page-content.json"
+
 import "./Footer.styles.scss"
 
 library.add(
@@ -29,35 +31,42 @@ const Footer = () => {
               <img src={Logo} alt="Roots Restaurant" className="footer--logo-image" />
             </a>
             <ul className="footer--address">
-              <li className="footer--address-item">254 Brampton Road</li>
-              <li className="footer--address-item">Bexleyheath</li>
-              <li className="footer--address-item">Kent</li>
-              <li className="footer--address-item">United Kingdom</li>
-              <li className="footer--address-item">DA7 5SB</li>
-              <li className="footer--address-item">info@rootsrestaurant.com</li>
+              <li className="footer--address-item">{data.business_details.address.street}</li>
+              <li className="footer--address-item">{data.business_details.address.city}</li>
+              <li className="footer--address-item">{data.business_details.address.state}</li>
+              <li className="footer--address-item">{data.business_details.address.county}</li>
+              <li className="footer--address-item">{data.business_details.address.postal_code}</li>
+              <li className="footer--address-item">{data.business_details.address.email}</li>
             </ul>
           </div>
           <div className="col-12 col-lg-4 footer--middle">
-            <h4 className="footer--heading">Useful Links</h4>
+            <h4 className="footer--heading">{data.footer_copy.links_heading}</h4>
             <div className="footer--pages">
               <ul className="footer--pages-list">
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">About Us</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Privacy Policy</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Our Sitemap</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Contact Us</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Sustainability</a></li>
+                {data.footer_links
+                  .sort((a, b) => a.ul_list - b.ul_list || a.order - b.order)
+                  .filter(link => link.ul_list === 1)
+                  .map((link, index) => (
+                    <li className="footer--pages-item" key={index}>
+                      <a href={link.href} className="footer--pages-link">{link.text}</a>
+                    </li>
+                  ))}
               </ul>
               <ul className="footer--pages-list">
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Media</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">FAQ</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Coronavirus FAQ</a></li>
-                <li className="footer--pages-item"><a href="/" className="footer--pages-link">Terms and Conditions</a></li>
+                {data.footer_links
+                  .sort((a, b) => a.ul_list - b.ul_list || a.order - b.order)
+                  .filter(link => link.ul_list === 2)
+                  .map((link, index) => (
+                    <li className="footer--pages-item" key={index}>
+                      <a href={link.href} className="footer--pages-link">{link.text}</a>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
           <div className="col-12 col-lg-4 footer--right">
-            <h4 className="footer--heading">Join Our Newsletter Now</h4>
-            <p className="footer--bodycopy">Get E-mail updates about our latest shop and special offers.</p>
+            <h4 className="footer--heading">{data.footer_copy.newsletter_heading}</h4>
+            <p className="footer--bodycopy">{data.footer_copy.newsletter_copy}</p>
             <form className="footer--form">
               <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn" type="submit">subscribe</button>
