@@ -1,6 +1,7 @@
 import React from "react"
 
 import Directory from "../../components/Directory/Directory.component"
+import ServicesList from "../../components/ServicesList/ServicesList.component"
 
 const Home = () => {
   const categories = [
@@ -42,7 +43,10 @@ const Home = () => {
   ]
 
   return (
-    <Directory categories={categories} />
+    <>
+      <ServicesList />
+      <Directory categories={categories} />
+    </>
   )
 }
 
