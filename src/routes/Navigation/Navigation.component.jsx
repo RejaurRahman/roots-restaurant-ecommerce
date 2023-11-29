@@ -28,17 +28,32 @@ const Navigation = () => {
             <div className="col-12 col-md-6 top-header--right-column">
               <ul className="top-header--social-list">
                 <li className="top-header--social-item">
-                  <Link to="https://en-gb.facebook.com/" rel="noreferrer" target="_blank" className="top-header--social-link">
+                  <Link
+                    className="top-header--social-link"
+                    rel="noreferrer"
+                    target="_blank"
+                    to="https://en-gb.facebook.com/"
+                  >
                     <FontAwesomeIcon icon={["fab", "fa-facebook-f"]} />
                   </Link>
                 </li>
                 <li className="top-header--social-item">
-                  <Link to="https://twitter.com/" rel="noreferrer" target="_blank" className="top-header--social-link">
+                  <Link
+                    className="top-header--social-link"
+                    rel="noreferrer"
+                    target="_blank"
+                    to="https://twitter.com/"
+                  >
                     <FontAwesomeIcon icon={["fab", "fa-twitter"]} />
                   </Link>
                 </li>
                 <li className="top-header--social-item">
-                  <Link to="https://www.instagram.com/" rel="noreferrer" target="_blank" className="top-header--social-link">
+                  <Link
+                    className="top-header--social-link"
+                    rel="noreferrer"
+                    target="_blank"
+                    to="https://www.instagram.com/"
+                    >
                     <FontAwesomeIcon icon={["fab", "fa-instagram"]} />
                   </Link>
                 </li>
@@ -51,7 +66,10 @@ const Navigation = () => {
         <div className="container navbar--container">
           <div className="row navbar--row">
             <div className="col-12 col-lg-7 navbar--left">
-              <Link className="navbar-brand" to="/">
+              <Link
+                className="navbar-brand"
+                to="/"
+              >
                 <img src={Logo} alt="Roots Restaurant" className="navbar-logo" />
               </Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,15 +81,28 @@ const Navigation = () => {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link
-                      className="nav-link active"
                       aria-current="page"
+                      className="nav-link active"
                       to="/"
                     >
                       Home
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" href="/shop">Shop</Link>
+                    <Link
+                      className="nav-link"
+                      to="/shop"
+                    >
+                      Shop
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/sign-in"
+                    >
+                      Sign In
+                    </Link>
                   </li>
                 </ul>
               </div>
