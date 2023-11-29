@@ -1,4 +1,4 @@
-import CategoryItem from "./components/CategoryItem/CategoryItem"
+import Directory from "./components/Directory/Directory"
 
 import "./styles/styles.scss"
 
@@ -43,15 +43,7 @@ const App = () => {
 
   return (
     <div className="app">
-      {
-        categories.map(({ id, title, imageUrl }) => (
-          <CategoryItem
-            key={id}
-            imageUrl={imageUrl}
-            title={title}
-          />
-        ))
-      }
+      <Directory categories={categories} />
     </div>
   )
 }
