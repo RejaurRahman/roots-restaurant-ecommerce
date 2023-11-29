@@ -15,6 +15,8 @@ library.add(
 )
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer--backtop">
@@ -83,7 +85,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-12 col-lg-6">
               <span className="footer--copyright-text">
-                Copyright &copy; <script>document.write(new Date().getFullYear())</script>. All rights reserved | Roots Healthy Restaurant
+                Copyright &copy; {currentYear}. All rights reserved | Roots Healthy Restaurant
               </span>
             </div>
             <div className="col-12 col-lg-6">
