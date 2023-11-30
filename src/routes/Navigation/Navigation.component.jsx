@@ -2,6 +2,8 @@ import React, { useContext } from "react"
 
 import { Outlet, Link } from "react-router-dom"
 
+import { signOutUser } from "../../utils/firebase/firebase.utils"
+
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
@@ -19,8 +21,12 @@ library.add(
 )
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext)
-  console.log(currentUser)
+  const { currentUser, setCurrentUser } = useContext(UserContext)
+
+  const signOutHandler = async () => {
+    await signOutUser()
+    setCurrentUser(null)
+  }
 
   return (
     <>
@@ -118,12 +124,22 @@ const Navigation = () => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link
-                      className="nav-link navbar--link"
-                      to="/auth"
-                    >
-                      Sign In
-                    </Link>
+                    {currentUser ? (
+                      <span
+                        className="nav-link navbar--link"
+                        onClick={signOutHandler}
+                      >
+                        {" "}
+                        SIGN OUT{" "}
+                      </span>
+                    ) : (
+                      <Link
+                        className="nav-link navbar--link"
+                        to="/auth"
+                      >
+                        Sign In
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </div>
