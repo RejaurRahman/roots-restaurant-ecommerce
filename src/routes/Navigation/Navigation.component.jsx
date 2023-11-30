@@ -115,7 +115,7 @@ const Navigation = () => {
                   <li className="nav-item">
                     <Link
                       className="nav-link navbar--link"
-                      to="/sign-in"
+                      to="/auth"
                     >
                       Sign In
                     </Link>
