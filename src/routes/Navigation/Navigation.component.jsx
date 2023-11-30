@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import { Outlet, Link } from "react-router-dom"
 
@@ -6,6 +6,8 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import { UserContext } from "../../contexts/user.context"
 
 import Logo from "../../assets/images/logo.png"
 
@@ -17,6 +19,9 @@ library.add(
 )
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext)
+  console.log(currentUser)
+
   return (
     <>
       <div className="top-header">
