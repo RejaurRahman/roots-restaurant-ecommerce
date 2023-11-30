@@ -1,19 +1,14 @@
 import SignIn from "../../components/SignIn/SignIn.component"
 import SignUp from "../../components/SignUp/SignUp.component"
 
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth
-} from "../../utils/firebase/firebase.utils"
+import "./Authentication.style.scss"
 
 const Authentication = () => {
   return (
-    <>
-      <h1>sign in page</h1>
-
+    <div className="authentication-container">
       <SignIn />
       <SignUp />
-    </>
+    </div>
   )
 }
 

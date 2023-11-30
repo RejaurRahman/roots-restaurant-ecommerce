@@ -6,8 +6,8 @@ import {
   signInAuthUserWithEmailAndPassword
 } from "../../utils/firebase/firebase.utils"
 
-import FormInput from "../FormInput/FormInput.component"
 import Button from "../Button/Button.component"
+import FormInput from "../FormInput/FormInput.component"
 
 import "./SignIn.styles.scss"
 
@@ -38,18 +38,19 @@ const SignIn = () => {
         password
       )
 
-      console.log(response);
+      console.log(response)
+
       resetFormFields();
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
-          alert("incorrect password for email");
-          break;
+          alert("incorrect password for email")
+          break
         case "auth/user-not-found":
-          alert("no user associated with this email");
-          break;
+          alert("no user associated with this email")
+          break
         default:
-          console.log(error);
+          console.log(error)
       }
     }
   };
