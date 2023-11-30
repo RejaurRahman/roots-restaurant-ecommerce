@@ -11,7 +11,7 @@ import "./styles/styles.scss"
 
 const Shop = () => {
   return (
-    <div>I am shop page</div>
+    <h1>I am shop page</h1>
   )
 }
 

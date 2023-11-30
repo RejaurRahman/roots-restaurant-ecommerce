@@ -52,7 +52,7 @@ export const createUserDocumentFromAuth = async (
   const userSnapshot = await getDoc(userDocRef)
 
   if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
+    const { displayName, email } = userAuth
     const createdAt = new Date()
 
     try {
@@ -79,7 +79,7 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return
 
-  return await signInWithEmailAndPassword(auth, email, password);
+  return await signInWithEmailAndPassword(auth, email, password)
 }
 
 export const signOutUser = async () => await signOut(auth)
