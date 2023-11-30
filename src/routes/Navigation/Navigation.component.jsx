@@ -98,7 +98,7 @@ const Navigation = () => {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className="nav-link mx-lg-2"
+                      className="nav-link navbar--link mx-lg-2"
                       to="/shop"
                     >
                       Shop
@@ -114,7 +114,7 @@ const Navigation = () => {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className="nav-link"
+                      className="nav-link navbar--link"
                       to="/sign-in"
                     >
                       Sign In

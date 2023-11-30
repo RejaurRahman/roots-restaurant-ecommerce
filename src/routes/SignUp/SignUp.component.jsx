@@ -6,6 +6,7 @@ import {
 } from "../../utils/firebase/firebase.utils"
 
 import FormInput from "../../components/FormInput/FormInput.component"
+import Button from "../../components/Button/Button.component"
 
 import "./SignUp.styles.scss"
 
@@ -63,7 +64,8 @@ const SignUp = () => {
 
   return (
     <>
-      <h1>Sign up with your email and password</h1>
+      <h2>Don&apos;t have an account?</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -101,7 +103,7 @@ const SignUp = () => {
           value={confirmPassword}
         />
 
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </>
   )
