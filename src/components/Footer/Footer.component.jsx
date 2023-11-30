@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="container footer-container">
         <div className="row">
-          <div className="col-12 col-lg-4 footer--left">
+          <div className="col-12 col-lg-4">
             <a href="/" className="footer--logo">
               <img src={Logo} alt="Roots Restaurant" className="footer--logo-image" />
             </a>
@@ -48,7 +48,7 @@ const Footer = () => {
               <li className="footer--address-item">{data.business_details.address.email}</li>
             </ul>
           </div>
-          <div className="col-12 col-lg-4 footer--middle">
+          <div className="col-12 col-lg-4">
             <h4 className="footer--heading">{data.footer_copy.links_heading}</h4>
             <div className="footer--pages">
               <ul className="footer--pages-list">
@@ -56,7 +56,7 @@ const Footer = () => {
                   .sort((a, b) => a.ul_list - b.ul_list || a.order - b.order)
                   .filter(link => link.ul_list === 1)
                   .map((link, index) => (
-                    <li className="footer--pages-item" key={index}>
+                    <li key={index}>
                       <a href={link.href} className="footer--pages-link">{link.text}</a>
                     </li>
                   ))}
@@ -66,14 +66,14 @@ const Footer = () => {
                   .sort((a, b) => a.ul_list - b.ul_list || a.order - b.order)
                   .filter(link => link.ul_list === 2)
                   .map((link, index) => (
-                    <li className="footer--pages-item" key={index}>
+                    <li key={index}>
                       <a href={link.href} className="footer--pages-link">{link.text}</a>
                     </li>
                   ))}
               </ul>
             </div>
           </div>
-          <div className="col-12 col-lg-4 footer--right">
+          <div className="col-12 col-lg-4">
             <h4 className="footer--heading">{data.footer_copy.newsletter_heading}</h4>
             <p className="footer--bodycopy">{data.footer_copy.newsletter_copy}</p>
             <FooterForm />

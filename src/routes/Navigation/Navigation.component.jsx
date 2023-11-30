@@ -22,8 +22,8 @@ const Navigation = () => {
       <div className="top-header">
         <div className="container top-header--container">
           <div className="row">
-            <div className="col-12 col-md-6">
-              <span className="top-header--shipping">Free Shipping on all orders</span>
+            <div className="col-12 col-md-6 top-header--shipping">
+              <span>Free Shipping on all orders</span>
             </div>
             <div className="col-12 col-md-6 top-header--right-column">
               <ul className="top-header--social-list">
@@ -65,7 +65,7 @@ const Navigation = () => {
       <nav id="top-navbar" className="navbar navbar-expand-lg sticky-top">
         <div className="container navbar--container">
           <div className="row navbar--row">
-            <div className="col-12 col-lg-7 navbar--left">
+            <div className="col-12 col-lg-11 navbar--left">
               <Link
                 className="navbar-brand"
                 to="/"
@@ -77,12 +77,12 @@ const Navigation = () => {
                   <FontAwesomeIcon icon={["fas", "fa-bars"]} size="2x" />
                 </span>
               </button>
-              <div className="collapse navbar-collapse" id="headerNav">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <div className="collapse navbar-collapse offset-lg-1" id="headerNav">
+                <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link
                       aria-current="page"
-                      className="nav-link active"
+                      className="nav-link navbar--link active mx-lg-3"
                       to="/"
                     >
                       Home
@@ -90,10 +90,26 @@ const Navigation = () => {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className="nav-link"
+                      className="nav-link navbar--link mx-lg-3"
+                      to="/"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link mx-lg-2"
                       to="/shop"
                     >
                       Shop
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link navbar--link mx-lg-3"
+                      to="/"
+                    >
+                      Media
                     </Link>
                   </li>
                   <li className="nav-item">

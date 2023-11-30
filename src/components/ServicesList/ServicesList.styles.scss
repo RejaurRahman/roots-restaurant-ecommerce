@@ -29,6 +29,16 @@
     border: 2px solid rgba(255, 255, 255, 0.19);
     border-radius: 50%;
   }
+
+  svg {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .home--services-copy,
