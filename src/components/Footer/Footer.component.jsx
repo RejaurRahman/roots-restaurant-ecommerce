@@ -19,7 +19,7 @@ library.add(
 )
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   const handleScrollToTop = () => {
     window.scrollTo({

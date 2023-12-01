@@ -115,7 +115,7 @@ const Navigation = () => {
                       className="nav-link navbar--link mx-lg-3"
                       to="/"
                     >
-                      Media
+                      Contact
                     </Link>
                   </li>
                   <li className="nav-item">

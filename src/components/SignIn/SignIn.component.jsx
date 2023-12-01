@@ -37,13 +37,13 @@ const SignIn = () => {
     } catch (error) {
       console.log("User sign in failed", error)
     }
-  };
+  }
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
 
-    setFormFields({ ...formFields, [name]: value });
-  };
+    setFormFields({ ...formFields, [name]: value })
+  }
 
   return (
     <div className="sign-in-container">
