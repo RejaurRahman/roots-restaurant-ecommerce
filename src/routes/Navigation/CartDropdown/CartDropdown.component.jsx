@@ -29,6 +29,7 @@ const CartDropdown = () => {
         )}
       </div>
       <Button
+        buttonType="primary"
         onClick={goToCheckoutHandler}
       >
         CHECKOUT

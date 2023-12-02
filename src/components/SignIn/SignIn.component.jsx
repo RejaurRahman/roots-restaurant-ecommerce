@@ -46,11 +46,23 @@ const SignIn = () => {
   }
 
   return (
-    <div className="sign-in-container">
-      <h2>Already have an account?</h2>
-      <span>Sign in with your email and password</span>
+    <div className="col-12 col-lg-6 sign-in-container">
+      <h1>Login to Roots</h1>
 
       <form onSubmit={handleSubmit}>
+        <div className="social-login">
+          <Button
+            buttonType="google"
+            type="button"
+            onClick={signInWithGoogle}
+          >
+            Google Sign In
+          </Button>
+          <div className="login-text">
+            or login with your email:
+          </div>
+        </div>
+
         <FormInput
           label="Email"
           type="email"
@@ -69,18 +81,12 @@ const SignIn = () => {
           value={password}
         />
 
-        <div className="buttons-container">
-          <Button type="submit">
-            Sign In
-          </Button>
-          <Button
-            type="button"
-            buttonType="google"
-            onClick={signInWithGoogle}
-          >
-            Google Sign In
-          </Button>
-        </div>
+        <Button
+          buttonType="primary"
+          type="submit"
+        >
+          Sign In
+        </Button>
       </form>
     </div>
   )

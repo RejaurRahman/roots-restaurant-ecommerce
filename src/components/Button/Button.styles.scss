@@ -1,45 +1,67 @@
 .button-container {
-  min-width: 165px;
+  font-family: "Caviar Dreams", sans-serif;
   width: auto;
-  height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: #000;
-  color: #fff;
   text-transform: uppercase;
   font-weight: bolder;
-  border: 0;
   cursor: pointer;
   display: flex;
   justify-content: center;
+  appearance: none;
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
 
-  &:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+  &.primary {
+    background-color: #088972;
+    color: #fff;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: #fff;
+      color: #088972;
+      border: 1px solid #088972;
+    }
   }
 
   &.google-sign-in {
+    border: 0;
     background-color: #4285f4;
     color: #fff;
 
     &:hover {
       background-color: #357ae8;
-      border: 0;
     }
   }
 
   &.inverted {
     background-color: #fff;
-    color: #000;
-    border: 1px solid #000;
+    color: #088972;
+    border: 1px solid #088972;
 
     &:hover {
-      background-color: #000;
+      background-color: #088972;
       color: #fff;
       border: 0;
     }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #088972;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    padding: 0 12px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: 0 35px;
   }
 }

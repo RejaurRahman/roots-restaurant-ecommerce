@@ -4,7 +4,9 @@ import "./Button.styles.scss"
 
 const BUTTON_TYPE_CLASSES = {
   google: "google-sign-in",
-  inverted: "inverted"
+  inverted: "inverted",
+  primary: "primary",
+  transparent: "transparent"
 }
 
 const Button = ({

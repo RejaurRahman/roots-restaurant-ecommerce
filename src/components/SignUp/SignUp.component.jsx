@@ -63,9 +63,11 @@ const SignUp = () => {
   }
 
   return (
-    <>
-      <h2>Don&apos;t have an account?</h2>
-      <span>Sign up with your email and password</span>
+    <div className="sign-up-container col-12 col-lg-6">
+      <h1>Don&apos;t have an account?</h1>
+      <div className="sign-up-text">
+        sign up with Roots:
+      </div>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
@@ -103,9 +105,14 @@ const SignUp = () => {
           value={confirmPassword}
         />
 
-        <Button type="submit">Sign Up</Button>
+        <Button
+          buttonType="primary"
+          type="submit"
+        >
+          Sign Up
+        </Button>
       </form>
-    </>
+    </div>
   )
 }
 

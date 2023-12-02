@@ -1,5 +1,7 @@
 import React from "react"
 
+import Button from "../Button/Button.component"
+
 import "./CategoryItem.styles.scss"
 
 const CategoryItem = ({ category }) => {
@@ -17,9 +19,11 @@ const CategoryItem = ({ category }) => {
         <h2>
           {title}
         </h2>
-        <p>
+        <Button
+          buttonType="transparent"
+        >
           Shop Now
-        </p>
+        </Button>
       </div>
     </div>
   )
