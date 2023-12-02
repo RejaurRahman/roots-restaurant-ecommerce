@@ -1,30 +1,13 @@
-import React, { useContext } from "react"
+import React from "react"
 
-import { Outlet, Link } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
-import { signOutUser } from "../../utils/firebase/firebase.utils"
-
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
-import { UserContext } from "../../contexts/user.context"
-
-import CartIcon from "./CartIcon/CartIcon.component"
-
-import Logo from "../../assets/images/logo.png"
+import MenuList from "./MenuList/MenuList.component"
+import SocialList from "./SocialList/SocialList.component"
 
 import "./Navigation.styles.scss"
 
-library.add(
-  fab,
-  faBars
-)
-
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext)
-
   return (
     <>
       <div className="top-header">
@@ -34,117 +17,12 @@ const Navigation = () => {
               <span>Free Shipping on all orders</span>
             </div>
             <div className="col-12 col-md-6 top-header--right-column">
-              <ul className="top-header--social-list">
-                <li className="top-header--social-item">
-                  <Link
-                    className="top-header--social-link"
-                    rel="noreferrer"
-                    target="_blank"
-                    to="https://en-gb.facebook.com/"
-                  >
-                    <FontAwesomeIcon icon={["fab", "fa-facebook-f"]} />
-                  </Link>
-                </li>
-                <li className="top-header--social-item">
-                  <Link
-                    className="top-header--social-link"
-                    rel="noreferrer"
-                    target="_blank"
-                    to="https://twitter.com/"
-                  >
-                    <FontAwesomeIcon icon={["fab", "fa-twitter"]} />
-                  </Link>
-                </li>
-                <li className="top-header--social-item">
-                  <Link
-                    className="top-header--social-link"
-                    rel="noreferrer"
-                    target="_blank"
-                    to="https://www.instagram.com/"
-                    >
-                    <FontAwesomeIcon icon={["fab", "fa-instagram"]} />
-                  </Link>
-                </li>
-              </ul>
+              <SocialList />
             </div>
           </div>
         </div>
       </div>
-      <nav id="top-navbar" className="navbar navbar-expand-lg sticky-top">
-        <div className="container navbar--container">
-          <div className="row navbar--row">
-            <div className="col-6 col-lg-11 navbar--left">
-              <Link
-                className="navbar-brand"
-                to="/"
-              >
-                <img src={Logo} alt="Roots Restaurant" className="navbar-logo" />
-              </Link>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon">
-                  <FontAwesomeIcon icon={["fas", "fa-bars"]} size="2x" />
-                </span>
-              </button>
-              <div className="collapse navbar-collapse offset-lg-1" id="headerNav">
-                <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <Link
-                      aria-current="page"
-                      className="nav-link navbar--link active mx-lg-3"
-                      to="/"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link navbar--link mx-lg-3"
-                      to="/"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link navbar--link mx-lg-2"
-                      to="/shop"
-                    >
-                      Shop
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link navbar--link mx-lg-3"
-                      to="/"
-                    >
-                      Contact
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    {currentUser ? (
-                      <span
-                        className="nav-link navbar--link"
-                        onClick={signOutUser}
-                      >
-                        {" "}
-                        SIGN OUT{" "}
-                      </span>
-                    ) : (
-                      <Link
-                        className="nav-link navbar--link"
-                        to="/auth"
-                      >
-                        Sign In
-                      </Link>
-                    )}
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <CartIcon />
-          </div>
-        </div>
-      </nav>
+      <MenuList />
       <Outlet />
     </>
   )
