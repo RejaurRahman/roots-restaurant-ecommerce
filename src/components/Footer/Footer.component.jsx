@@ -1,4 +1,5 @@
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Link, useLocation } from "react-router-dom"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -45,7 +46,13 @@ const Footer = () => {
               className="footer--logo"
               to="/"
             >
-              <img src={Logo} alt="Roots Restaurant" className="footer--logo-image" />
+              <LazyLoadImage
+                alt="Roots Restaurant"
+                className="footer--logo-image"
+                src={Logo}
+                height={55}
+                width={55}
+              />
             </Link>
             <ul className="footer--address">
               <li className="footer--address-item">

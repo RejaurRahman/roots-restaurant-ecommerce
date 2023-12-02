@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import { Link } from "react-router-dom"
 
@@ -56,10 +57,12 @@ const Menu = () => {
               className="navbar-brand"
               to="/"
             >
-              <img
+              <LazyLoadImage
                 alt="Roots Restaurant"
                 className="navbar-logo"
                 src={Logo}
+                height={55}
+                width={55}
               />
             </Link>
             <button

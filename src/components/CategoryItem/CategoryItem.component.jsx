@@ -1,4 +1,5 @@
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import Button from "../Button/Button.component"
 
@@ -9,11 +10,12 @@ const CategoryItem = ({ category }) => {
 
   return (
     <div className="category-container">
-      <div
+      <LazyLoadImage
+        alt={title}
         className="background-image"
-        style={{
-          backgroundImage: `url(${imageUrl})`
-        }}
+        height={296}
+        src={imageUrl}
+        width={351}
       />
       <div className="category-body-container">
         <h2>
