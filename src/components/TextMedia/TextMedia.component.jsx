@@ -1,8 +1,7 @@
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import data from "../../data/page-content.json"
-
-import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import "./TextMedia.styles.scss"
 
