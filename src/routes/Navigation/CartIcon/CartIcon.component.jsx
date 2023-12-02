@@ -13,7 +13,11 @@ library.add(
 )
 
 const CartIcon = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext)
+  const {
+    cartCount,
+    isCartOpen,
+    setIsCartOpen
+  } = useContext(CartContext)
 
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
 
@@ -28,7 +32,7 @@ const CartIcon = () => {
           size="2x"
         />
         <span className="navbar-product--icon-value">
-          0
+          {cartCount}
         </span>
       </button>
     </div>
