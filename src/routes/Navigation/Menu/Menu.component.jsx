@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import { Link } from "react-router-dom"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import { CartContext } from "../../../contexts/cart.context"
 
 import CartDropdown from "../CartDropdown/CartDropdown.component"
 import CartIcon from "../CartIcon/CartIcon.component"
@@ -19,6 +21,8 @@ library.add(
 )
 
 const Menu = () => {
+  const { isCartOpen } = useContext(CartContext)
+
   return (
     <nav
       className="navbar navbar-expand-lg sticky-top"
@@ -56,7 +60,9 @@ const Menu = () => {
             <MenuList />
           </div>
           <CartIcon />
-          <CartDropdown />
+          {isCartOpen && (
+            <CartDropdown />
+          )}
         </div>
       </div>
     </nav>

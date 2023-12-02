@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useContext } from "react"
+
+import { CartContext } from "../../../contexts/cart.context"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons"
@@ -11,21 +13,24 @@ library.add(
 )
 
 const CartIcon = () => {
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext)
+
+  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
+
   return (
     <div className="col-6 col-lg-1 navbar--right">
-      <div className="navbar-product--icon">
-        <ul className="navbar-product--icon-list">
-          <li className="navbar-product--icon-item">
-            <FontAwesomeIcon
-              icon={["fas", "fa-bag-shopping"]}
-              size="2x"
-            />
-            <span className="navbar-product--icon-value">
-              0
-            </span>
-          </li>
-        </ul>
-      </div>
+      <button
+        className="navbar-product--icon"
+        onClick={toggleIsCartOpen}
+      >
+        <FontAwesomeIcon
+          icon={["fas", "fa-bag-shopping"]}
+          size="2x"
+        />
+        <span className="navbar-product--icon-value">
+          0
+        </span>
+      </button>
     </div>
   )
 }

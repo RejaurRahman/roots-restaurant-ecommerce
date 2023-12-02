@@ -5,23 +5,15 @@
 }
 
 .navbar-product--icon {
-  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  padding: 0;
+  color: #088972;
 
   @media screen and (min-width: 992px) {
     margin-left: 15px;
   }
-}
-
-.navbar-product--icon-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-product--icon-item {
-  color: #088972;
-  display: inline-block;
-  position: relative;
 }
 
 .navbar-product--icon-value {
