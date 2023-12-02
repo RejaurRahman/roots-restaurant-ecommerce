@@ -3,6 +3,7 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 
 import Authentication from "./routes/Authentication/Authentication.component"
+import Checkout from "./routes/Checkout/Checkout.component"
 import Footer from "./components/Footer/Footer.component"
 import Home from "./routes/Home/Home.component"
 import Navigation from "./routes/Navigation/Navigation.component"
@@ -18,6 +19,7 @@ const App = () => {
           <Route index element={<Home />}  />
           <Route path="shop" element={<Shop />} />
           <Route path="auth" element={<Authentication />} />
+          <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
       <Footer />
