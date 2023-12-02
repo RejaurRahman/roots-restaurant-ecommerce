@@ -2,8 +2,10 @@ import React from "react"
 
 import { Route, Routes } from "react-router-dom"
 
+import About from "./routes/About/About.component"
 import Authentication from "./routes/Authentication/Authentication.component"
 import Checkout from "./routes/Checkout/Checkout.component"
+import Contact from "./routes/Contact/Contact.component"
 import Footer from "./components/Footer/Footer.component"
 import Home from "./routes/Home/Home.component"
 import Navigation from "./routes/Navigation/Navigation.component"
@@ -16,6 +18,8 @@ const App = () => {
     <div className="app">
       <Routes>
         <Route path="/" element={<Navigation />}>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route index element={<Home />}  />
           <Route path="shop" element={<Shop />} />
           <Route path="auth" element={<Authentication />} />

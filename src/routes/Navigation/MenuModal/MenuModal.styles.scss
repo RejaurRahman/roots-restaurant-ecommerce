@@ -30,7 +30,6 @@
   .modal-dialog {
     border-top: 1px solid #ccc;
     background-color: #fff;
-    top: calc(46px + 71px);
     max-width: 100%;
     padding-bottom: 15px;
     margin: {
@@ -40,7 +39,13 @@
       left: 0;
     }
 
+    &:not(.scrolled) {
+      height: calc(100vh - 46px - 71px);
+      top: calc(46px + 71px);
+    }
+
     &.scrolled {
+      height: calc(100vh - 71px);
       top: 71px;
     }
   }
