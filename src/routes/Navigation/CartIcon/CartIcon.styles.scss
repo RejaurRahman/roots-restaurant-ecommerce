@@ -4,25 +4,27 @@
   justify-content: flex-end;
 }
 
-.navbar-product--icons {
+.navbar-product--icon {
+  cursor: pointer;
+
   @media screen and (min-width: 992px) {
     margin-left: 15px;
   }
 }
 
-.navbar-product--icons-list {
+.navbar-product--icon-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.navbar-product--icons-item {
+.navbar-product--icon-item {
   color: #088972;
   display: inline-block;
   position: relative;
 }
 
-.navbar-product--icons-value {
+.navbar-product--icon-value {
   font-size: 10px;
   color: #fff;
   font-weight: 700;

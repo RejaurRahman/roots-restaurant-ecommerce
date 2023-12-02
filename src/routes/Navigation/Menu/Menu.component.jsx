@@ -6,6 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
+import CartDropdown from "../CartDropdown/CartDropdown.component"
 import CartIcon from "../CartIcon/CartIcon.component"
 import MenuList from "../MenuList/MenuList.component"
 
@@ -55,6 +56,7 @@ const Menu = () => {
             <MenuList />
           </div>
           <CartIcon />
+          <CartDropdown />
         </div>
       </div>
     </nav>
