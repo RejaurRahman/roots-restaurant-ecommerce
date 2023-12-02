@@ -2,7 +2,7 @@ import React from "react"
 
 import Button from "../Button/Button.component"
 
-import "./product-card.styles.scss"
+import "./ProductCard.styles.scss"
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product

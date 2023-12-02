@@ -11,6 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { UserContext } from "../../contexts/user.context"
 
+import CartIcon from "./CartIcon/CartIcon.component"
+
 import Logo from "../../assets/images/logo.png"
 
 import "./Navigation.styles.scss"
@@ -71,7 +73,7 @@ const Navigation = () => {
       <nav id="top-navbar" className="navbar navbar-expand-lg sticky-top">
         <div className="container navbar--container">
           <div className="row navbar--row">
-            <div className="col-12 col-lg-11 navbar--left">
+            <div className="col-6 col-lg-11 navbar--left">
               <Link
                 className="navbar-brand"
                 to="/"
@@ -139,6 +141,7 @@ const Navigation = () => {
                 </ul>
               </div>
             </div>
+            <CartIcon />
           </div>
         </div>
       </nav>
