@@ -1,13 +1,4 @@
-.home--services {
-  @media screen and (min-width: 992px) {
-    padding: {
-      top: 90px;
-      right: 0;
-      bottom: 90px;
-      left: 0;
-    }
-  }
-
+.home-services {
   @media screen and (max-width: 991px) {
     padding: {
       top: 50px;
@@ -16,9 +7,18 @@
       left: 0;
     }
   }
+
+  @media screen and (min-width: 992px) {
+    padding: {
+      top: 90px;
+      right: 0;
+      bottom: 90px;
+      left: 0;
+    }
+  }
 }
 
-.home--services-circle {
+.home-services-circle {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -56,8 +56,8 @@
   }
 }
 
-.home--services-copy,
-.home--services-heading {
+.home-services-copy,
+.home-services-heading {
   text-align: center;
   text-transform: uppercase;
   color: #005547;

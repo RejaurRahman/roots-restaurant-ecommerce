@@ -13,7 +13,7 @@
   z-index: 1056;
 }
 
-.top-header--shipping {
+.top-header-shipping {
   display: flex;
   align-items: center;
 
@@ -22,7 +22,7 @@
   }
 }
 
-.top-header--right-column {
+.top-header-right-column {
   display: flex;
 
   @media screen and (max-width: 767px) {
@@ -34,7 +34,7 @@
   }
 }
 
-.top-header--container {
+.top-header-container {
   @media screen and (max-width: 767px) {
     text-align: center;
   }

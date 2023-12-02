@@ -17,18 +17,18 @@ library.add(
 
 const ServicesList = () => {
   return (
-    <div className="home--services">
+    <div className="home-services">
       <div className="container">
         <div className="row">
           {data.services_list.map((list, index) => (
             <div className="col-6 col-lg-3" key={index}>
-              <div className="home--services-circle" style={{backgroundColor: list.colour}}>
+              <div className="home-services-circle" style={{backgroundColor: list.colour}}>
                 <FontAwesomeIcon icon={["fas", `${list.iconName}`]} size="2x" />
               </div>
-              <h5 className="home--services-heading">
+              <h5 className="home-services-heading">
                 {list.heading}
               </h5>
-              <p className="home--services-copy">
+              <p className="home-services-copy">
                 {list.text}
               </p>
             </div>

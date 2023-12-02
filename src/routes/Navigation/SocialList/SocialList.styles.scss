@@ -1,4 +1,4 @@
-.top-header--social-list {
+.top-header-social-list {
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -6,19 +6,19 @@
   margin: 0;
 }
 
-.top-header--social-item {
+.top-header-social-item {
   display: inline-block;
 
   &:last-child {
-    .top-header--social-link:link,
-    .top-header--social-link:visited {
+    .top-header-social-link:link,
+    .top-header-social-link:visited {
       margin-right: 0;
     }
   }
 }
 
-.top-header--social-link:link,
-.top-header--social-link:visited {
+.top-header-social-link:link,
+.top-header-social-link:visited {
   color: #fff;
   text-decoration: none;
   margin-right: 20px;

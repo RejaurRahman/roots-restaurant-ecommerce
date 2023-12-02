@@ -49,9 +49,9 @@ const Menu = () => {
       className="navbar navbar-expand-lg sticky-top"
       id="topNavbar"
     >
-      <div className="container navbar--container">
-        <div className="row navbar--row">
-          <div className="col-6 col-lg-11 navbar--left">
+      <div className="container navbar-container">
+        <div className="row navbar-row">
+          <div className="col-6 col-lg-11 navbar-left">
             <Link
               className="navbar-brand"
               to="/"

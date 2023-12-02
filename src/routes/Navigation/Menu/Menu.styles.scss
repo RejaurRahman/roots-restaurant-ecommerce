@@ -34,13 +34,13 @@
   }
 }
 
-.navbar--container {
+.navbar-container {
   @media screen and (max-width: 991px) {
     max-width: 100%;
   }
 }
 
-.navbar--row {
+.navbar-row {
   @media screen and (max-width: 991px) {
     height: 55px;
   }
@@ -76,7 +76,7 @@
   }
 }
 
-.navbar--left {
+.navbar-left {
   display: flex;
   justify-content: space-between;
 

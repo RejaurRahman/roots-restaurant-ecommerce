@@ -16,7 +16,7 @@ const MenuModal = ({
       <div
         aria-hidden={!showModal}
         aria-labelledby="navigationModalLabel"
-        className={`modal fade ${showModal ? "show" : ""}`.trim()}
+        className={`modal fade header-modal ${showModal ? "show" : ""}`.trim()}
         onClick={closeModal}
         tabIndex="-1"
       >

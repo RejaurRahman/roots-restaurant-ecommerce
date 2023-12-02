@@ -22,16 +22,16 @@ const CartIcon = () => {
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
 
   return (
-    <div className="col-6 col-lg-1 navbar--right">
+    <div className="col-6 col-lg-1 navbar-right">
       <button
-        className="navbar-product--icon"
+        className="navbar-product-icon"
         onClick={toggleIsCartOpen}
       >
         <FontAwesomeIcon
           icon={["fas", "fa-bag-shopping"]}
           size="2x"
         />
-        <span className="navbar-product--icon-value">
+        <span className="navbar-product-icon-value">
           {cartCount}
         </span>
       </button>

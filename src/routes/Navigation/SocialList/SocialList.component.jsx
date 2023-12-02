@@ -14,10 +14,10 @@ library.add(
 
 const SocialList = () => {
   return (
-    <ul className="top-header--social-list">
-      <li className="top-header--social-item">
+    <ul className="top-header-social-list">
+      <li className="top-header-social-item">
         <Link
-          className="top-header--social-link"
+          className="top-header-social-link"
           rel="noreferrer"
           target="_blank"
           to="https://en-gb.facebook.com/"
@@ -27,9 +27,9 @@ const SocialList = () => {
           />
         </Link>
       </li>
-      <li className="top-header--social-item">
+      <li className="top-header-social-item">
         <Link
-          className="top-header--social-link"
+          className="top-header-social-link"
           rel="noreferrer"
           target="_blank"
           to="https://twitter.com/"
@@ -39,9 +39,9 @@ const SocialList = () => {
           />
         </Link>
       </li>
-      <li className="top-header--social-item">
+      <li className="top-header-social-item">
         <Link
-          className="top-header--social-link"
+          className="top-header-social-link"
           rel="noreferrer"
           target="_blank"
           to="https://www.instagram.com/"

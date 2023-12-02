@@ -4,11 +4,38 @@
   color: #000;
 }
 
+@mixin emailShrinkLabel {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #000;
+}
+
 .group {
   position: relative;
   margin: {
     top: 45px;
     bottom: 45px;
+  }
+
+  &.emailGroup {
+    margin: 0;
+    display: flex;
+    width: 100%;
+
+    .form-input {
+      padding-left: 10px;
+      margin: 0;
+
+      &:focus ~ .form-input-label {
+        @include emailShrinkLabel();
+      }
+    }
+
+    .form-input-label {
+      left: 10px;
+      top: 12px;
+    }
   }
 
   .form-input {

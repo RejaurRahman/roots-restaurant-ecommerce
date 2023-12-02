@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.footer--backtop {
+.footer-backtop {
   position: absolute;
   border-radius: 50%;
   height: 60px;
@@ -21,7 +21,7 @@
   color: #FFF;
 }
 
-.footer--copyright-text {
+.footer-copyright-text {
   text-align: center;
 
   @media screen and (max-width: 991px) {
@@ -33,7 +33,7 @@
   }
 }
 
-.footer--payment {
+.footer-payment {
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -49,17 +49,17 @@
   }
 }
 
-.footer--payment-list {
+.footer-payment-list {
   display: inline-block;
   margin-right: 15px;
   color: #088972;
 }
 
-.footer--logo {
+.footer-logo {
   display: inline-block;
 }
 
-.footer--address {
+.footer-address {
   padding-left: 0;
   list-style-type: none;
   margin: {
@@ -68,7 +68,7 @@
   }
 }
 
-.footer--heading {
+.footer-heading {
   color: #005547;
 
   @media screen and (max-width: 991px) {
@@ -80,27 +80,27 @@
   }
 }
 
-.footer--bodycopy {
+.footer-bodycopy {
   color: #005547;
   margin-bottom: 30px;
 }
 
-.footer--address-item {
+.footer-address-item {
   color: #005547;
 }
 
-.footer--pages {
+.footer-pages {
   display: flex;
 }
 
-.footer--pages-list {
+.footer-pages-list {
   padding-left: 0;
   list-style-type: none;
   width: 50%;
 }
 
-.footer--pages-link:link,
-.footer--pages-link:visited {
+.footer-pages-link:link,
+.footer-pages-link:visited {
   font-size: 14px;
   line-height: 32px;
   position: relative;
@@ -126,15 +126,15 @@
   }
 }
 
-.footer--pages-link-active:link,
-.footer--pages-link-active:visited {
+.footer-pages-link-active:link,
+.footer-pages-link-active:visited {
   &::before {
     opacity: 1;
     background-color: #005547;
   }
 }
 
-.footer--form {
+.footer-form {
   display: flex;
 
   .form-control {
@@ -156,7 +156,7 @@
   }
 }
 
-.footer--social {
+.footer-social {
   list-style-type: none;
   padding: 0;
   margin: {
@@ -165,7 +165,7 @@
   }
 }
 
-.footer--social-list {
+.footer-social-list {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -179,8 +179,8 @@
   }
 }
 
-.footer--social-link:link,
-.footer--social-link:visited {
+.footer-social-link:link,
+.footer-social-link:visited {
   color: #088972;
   text-decoration: none;
   display: flex;
@@ -194,7 +194,7 @@
   }
 }
 
-.footer--copyright {
+.footer-copyright {
   margin-top: 20px;
   padding: {
     top: 15px;

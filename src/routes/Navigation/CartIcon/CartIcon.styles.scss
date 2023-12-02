@@ -1,10 +1,10 @@
-.navbar--right {
+.navbar-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.navbar-product--icon {
+.navbar-product-icon {
   background-color: transparent;
   border: 0;
   position: relative;
@@ -16,7 +16,7 @@
   }
 }
 
-.navbar-product--icon-value {
+.navbar-product-icon-value {
   font-size: 10px;
   color: #fff;
   font-weight: 700;

@@ -11,12 +11,12 @@ const Navigation = () => {
   return (
     <>
       <div className="top-header">
-        <div className="container top-header--container">
+        <div className="container top-header-container">
           <div className="row">
-            <div className="col-12 col-md-6 top-header--shipping">
+            <div className="col-12 col-md-6 top-header-shipping">
               <span>Free Shipping on all orders</span>
             </div>
-            <div className="col-12 col-md-6 top-header--right-column">
+            <div className="col-12 col-md-6 top-header-right-column">
               <SocialList />
             </div>
           </div>
