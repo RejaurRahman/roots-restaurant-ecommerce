@@ -2,7 +2,7 @@ import React from "react"
 
 import { Outlet } from "react-router-dom"
 
-import MenuList from "./MenuList/MenuList.component"
+import Menu from "./Menu/Menu.component"
 import SocialList from "./SocialList/SocialList.component"
 
 import "./Navigation.styles.scss"
@@ -22,7 +22,7 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-      <MenuList />
+      <Menu />
       <Outlet />
     </>
   )
