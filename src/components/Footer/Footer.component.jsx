@@ -1,4 +1,5 @@
 import React from "react"
+import { Link, useLocation } from "react-router-dom"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
@@ -20,6 +21,7 @@ library.add(
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const location = useLocation()
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -31,25 +33,45 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer--backtop" onClick={handleScrollToTop}>
-        <FontAwesomeIcon icon={["fas", "fa-angle-up"]} size="2x" />
+        <FontAwesomeIcon
+          icon={["fas", "fa-angle-up"]}
+          size="2x"
+        />
       </div>
       <div className="container footer-container">
         <div className="row">
           <div className="col-12 col-lg-4">
-            <a href="/" className="footer--logo">
+            <Link
+              className="footer--logo"
+              to="/"
+            >
               <img src={Logo} alt="Roots Restaurant" className="footer--logo-image" />
-            </a>
+            </Link>
             <ul className="footer--address">
-              <li className="footer--address-item">{data.business_details.address.street}</li>
-              <li className="footer--address-item">{data.business_details.address.city}</li>
-              <li className="footer--address-item">{data.business_details.address.state}</li>
-              <li className="footer--address-item">{data.business_details.address.county}</li>
-              <li className="footer--address-item">{data.business_details.address.postal_code}</li>
-              <li className="footer--address-item">{data.business_details.address.email}</li>
+              <li className="footer--address-item">
+                {data.business_details.address.street}
+              </li>
+              <li className="footer--address-item">
+                {data.business_details.address.city}
+              </li>
+              <li className="footer--address-item">
+                {data.business_details.address.state}
+              </li>
+              <li className="footer--address-item">
+                {data.business_details.address.county}
+              </li>
+              <li className="footer--address-item">
+                {data.business_details.address.postal_code}
+              </li>
+              <li className="footer--address-item">
+                {data.business_details.address.email}
+              </li>
             </ul>
           </div>
           <div className="col-12 col-lg-4">
-            <h4 className="footer--heading">{data.footer_copy.links_heading}</h4>
+            <h4 className="footer--heading">
+              {data.footer_copy.links_heading}
+            </h4>
             <div className="footer--pages">
               <ul className="footer--pages-list">
                 {data.footer_links
@@ -57,7 +79,16 @@ const Footer = () => {
                   .filter(link => link.ul_list === 1)
                   .map((link, index) => (
                     <li key={index}>
-                      <a href={link.href} className="footer--pages-link">{link.text}</a>
+                      <Link
+                        className={`footer--pages-link ${
+                          link.href === location.pathname
+                            ? "footer--pages-link-active"
+                            : ""
+                        }`.trim()}
+                        to={link.href}
+                      >
+                        {link.text}
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -67,7 +98,16 @@ const Footer = () => {
                   .filter(link => link.ul_list === 2)
                   .map((link, index) => (
                     <li key={index}>
-                      <a href={link.href} className="footer--pages-link">{link.text}</a>
+                      <Link
+                        className={`footer--pages-link ${
+                          link.href === location.pathname
+                            ? "footer--pages-link-active"
+                            : ""
+                        }`.trim()}
+                        to={link.href}
+                      >
+                        {link.text}
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -79,19 +119,40 @@ const Footer = () => {
             <FooterForm />
             <ul className="footer--social">
               <li className="footer--social-list">
-                <a href="https://en-gb.facebook.com/" rel="noreferrer" target="_blank" className="footer--social-link">
-                  <FontAwesomeIcon icon={["fab", "fa-facebook-f"]} />
-                </a>
+                <Link
+                  className="footer--social-link"
+                  rel="noreferrer"
+                  target="_blank"
+                  to="https://en-gb.facebook.com/"
+                >
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-facebook-f"]}
+                  />
+                </Link>
               </li>
               <li className="footer--social-list">
-                <a href="https://twitter.com/" rel="noreferrer" target="_blank" className="footer--social-link">
-                  <FontAwesomeIcon icon={["fab", "fa-twitter"]} />
-                </a>
+                <Link
+                  className="footer--social-link"
+                  rel="noreferrer"
+                  target="_blank"
+                  to="https://twitter.com/"
+                >
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-twitter"]}
+                  />
+                </Link>
               </li>
               <li className="footer--social-list">
-                <a href="https://www.instagram.com/" rel="noreferrer" target="_blank" className="footer--social-link">
-                  <FontAwesomeIcon icon={["fab", "fa-instagram"]} />
-                </a>
+                <Link
+                  className="footer--social-link"
+                  rel="noreferrer"
+                  target="_blank"
+                  to="https://www.instagram.com/"
+                >
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-instagram"]}
+                  />
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,16 +167,28 @@ const Footer = () => {
             <div className="col-12 col-lg-6">
               <ul className="footer--payment">
                 <li className="footer--payment-list">
-                  <FontAwesomeIcon icon={["fab", "fa-cc-visa"]} size="2x" />
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-cc-visa"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer--payment-list">
-                  <FontAwesomeIcon icon={["fab", "fa-cc-mastercard"]} size="2x" />
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-cc-mastercard"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer--payment-list">
-                  <FontAwesomeIcon icon={["fab", "fa-cc-paypal"]} size="2x" />
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-cc-paypal"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer--payment-list">
-                  <FontAwesomeIcon icon={["fab", "fa-cc-amex"]} size="2x" />
+                  <FontAwesomeIcon
+                    icon={["fab", "fa-cc-amex"]}
+                    size="2x"
+                  />
                 </li>
               </ul>
             </div>
