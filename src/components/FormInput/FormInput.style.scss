@@ -6,20 +6,35 @@
 
 .group {
   position: relative;
-  margin: 45px 0;
+  margin: {
+    top: 45px;
+    bottom: 45px;
+  }
 
   .form-input {
     background: none;
     background-color: #fff;
     color: #ccc;
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    padding: {
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 5px;
+    }
     display: block;
     width: 100%;
-    border: 0;
     border-radius: 0;
-    border-bottom: 1px solid #ccc;
-    margin: 25px 0;
+    border: {
+      top: 0;
+      right: 0;
+      bottom: 1px solid #ccc;
+      left: 0;
+    }
+    margin: {
+      top: 25px;
+      bottom: 25px;
+    }
 
     &:focus {
       outline: none;

@@ -35,7 +35,7 @@ const MenuList = ({ showModal }) => {
           >
             <Link
               aria-current="page"
-              className={`nav-link navbar--link active mx-lg-3 ${isActive(link.href) ? "active" : ""}`.trim()}
+              className={`nav-link navbar--link mx-lg-3 ${isActive(link.href) ? "active" : ""}`.trim()}
               to={link.href}
             >
               {link.text}

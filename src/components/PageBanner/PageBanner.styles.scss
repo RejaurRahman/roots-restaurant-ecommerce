@@ -2,7 +2,12 @@
   position: relative;
 
   &.page-banner {
-    padding: 58px 0;
+    padding: {
+      top: 58px;
+      right: 0;
+      bottom: 58px;
+      left: 0;
+    }
   }
 }
 

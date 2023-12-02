@@ -40,7 +40,7 @@
 
   @media screen and (max-width: 991px) {
     justify-content: center;
-    margin: 10px 0 0 0;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 992px) {
@@ -62,8 +62,10 @@
 .footer--address {
   padding-left: 0;
   list-style-type: none;
-  margin-top: 15px;
-  margin-bottom: 0;
+  margin: {
+    top: 15px;
+    bottom: 0;
+  }
 }
 
 .footer--heading {
@@ -138,10 +140,12 @@
   .form-control {
     border-radius: 0;
     height: 46px;
-    border-top: 1px solid #e9e8e8;
-    border-left: 1px solid #e9e8e8;
-    border-bottom: 1px solid #e9e8e8;
-    border-right: none;
+    border: {
+      top: 1px solid #e9e8e8;
+      right: 0;
+      bottom: 1px solid #e9e8e8;
+      left: 1px solid #e9e8e8;
+    }
   }
 
   .btn {
@@ -153,10 +157,12 @@
 }
 
 .footer--social {
-  margin-top: 30px;
   list-style-type: none;
   padding: 0;
-  margin-bottom: 0;
+  margin: {
+    top: 30px;
+    bottom: 0;
+  }
 }
 
 .footer--social-list {
@@ -190,7 +196,10 @@
 
 .footer--copyright {
   margin-top: 20px;
-  padding: 15px 0;
+  padding: {
+    top: 15px;
+    bottom: 15px;
+  }
   border-top: 1px solid #e9e8e8;
 }
 
