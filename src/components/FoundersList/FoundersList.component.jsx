@@ -12,16 +12,16 @@ const imagePaths = [
 
 const FoundersList = () => {
   return (
-    <div class="container founders">
-      <h2 class="founders-main-heading">
+    <div className="container founders">
+      <h2 className="founders-main-heading">
         {data.founders.foundersMainHeading}
       </h2>
-      <div class="row">
+      <div className="row">
         {data.founders.list.map((founder, index) => {
           const imagePath = imagePaths[index % imagePaths.length]
 
           return (
-            <div class="col-12 col-lg-6 founders-item">
+            <div className="col-12 col-lg-6 founders-item">
               <LazyLoadImage
                 src={imagePath}
                 className="founders-image mx-auto"
@@ -29,8 +29,8 @@ const FoundersList = () => {
                 width={350}
                 height={407}
               />
-              <h3 class="founders-name">{founder.heading}</h3>
-              <p class="founders-copy">{founder.content}</p>
+              <h3 className="founders-name">{founder.heading}</h3>
+              <p className="founders-copy">{founder.content}</p>
             </div>
           )
         })}

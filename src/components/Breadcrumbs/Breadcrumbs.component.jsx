@@ -5,16 +5,16 @@ import "./Breadcrumbs.styles.scss"
 
 const Breadcrumbs = ({ label }) => {
   return (
-    <div class="breadcrumb-container container">
-      <div class="row">
-        <div class="col-12">
+    <div className="breadcrumb-container container">
+      <div className="row">
+        <div className="col-12">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link to="/">Home</Link>
               </li>
               <li
-                class="breadcrumb-item active"
+                className="breadcrumb-item active"
                 aria-current="page"
               >
                 {label}

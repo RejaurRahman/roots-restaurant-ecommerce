@@ -6,15 +6,15 @@ import "./PageBanner.styles.scss"
 
 const PageBanner = ({ label }) => {
   return (
-    <div class="banner page-banner">
+    <div className="banner page-banner">
       <img
         src={BannerBg}
         alt="Vegetable Banner"
         className="banner-image"
       />
-      <div class="banner-overlay" />
-      <div class="container">
-        <h1 class="banner-heading">
+      <div className="banner-overlay" />
+      <div className="container">
+        <h1 className="banner-heading">
           {label}
         </h1>
       </div>

@@ -90,8 +90,8 @@
     background-color: transparent;
     border: 0;
     position: relative;
-    top: 24px;
-    height: 30px;
+    width: 35px;
+    height: 100%;
 
     &:focus {
       box-shadow: none;
@@ -116,6 +116,8 @@
 
   .navbar-toggler-icon {
     background-image: none;
+    position: absolute;
+    left: 0;
     width: 35px;
     height: 30px;
     color: #088972;
