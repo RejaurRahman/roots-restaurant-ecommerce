@@ -18,7 +18,7 @@
       max-width: 720px;
     }
 
-    padding: 0 12px;
+    padding: 0;
     border: 0;
     border-radius: 0;
     margin: {
@@ -32,10 +32,7 @@
     background-color: #fff;
     top: calc(46px + 71px);
     max-width: 100%;
-    padding: {
-      top: 15px;
-      bottom: 15px;
-    }
+    padding-bottom: 15px;
     margin: {
       top: 0;
       right: 0;

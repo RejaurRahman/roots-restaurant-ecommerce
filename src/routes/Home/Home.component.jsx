@@ -1,6 +1,7 @@
 import React from "react"
 
 import Directory from "../../components/Directory/Directory.component"
+import MainBanner from "../../components/MainBanner/MainBanner.component"
 import ServicesList from "../../components/ServicesList/ServicesList.component"
 
 import Curry from "../../assets/images/cover/curry.jpg"
@@ -52,6 +53,7 @@ const Home = () => {
 
   return (
     <>
+      <MainBanner />
       <ServicesList />
       <Directory categories={categories} />
     </>
