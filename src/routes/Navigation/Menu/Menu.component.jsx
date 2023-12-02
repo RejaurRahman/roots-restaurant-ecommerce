@@ -1,27 +1,48 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 
 import { Link } from "react-router-dom"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
 import { CartContext } from "../../../contexts/cart.context"
+
+import useScreenWidth from "../../../hook/useScreenWidth"
 
 import CartDropdown from "../CartDropdown/CartDropdown.component"
 import CartIcon from "../CartIcon/CartIcon.component"
 import MenuList from "../MenuList/MenuList.component"
+import MenuModal from "../MenuModal/MenuModal.component"
 
 import Logo from "../../../assets/images/logo.png"
 
 import "./Menu.styles.scss"
 
-library.add(
-  faBars
-)
-
 const Menu = () => {
+  const isDesktop = useScreenWidth(992)
   const { isCartOpen } = useContext(CartContext)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [showModal, setShowModal] = useState(false)
+
+  const toggleModal = () => {
+    setShowModal(!showModal)
+
+    if (!showModal) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+
+    document.body.style.overflow = "auto"
+  }
+
+  const handleScroll = () => {
+    const currentPosition = window.pageYOffset
+    setScrollPosition(currentPosition)
+  }
+
+  window.addEventListener("scroll", handleScroll)
 
   return (
     <nav
@@ -42,22 +63,24 @@ const Menu = () => {
               />
             </Link>
             <button
-              aria-controls="headerNav"
-              aria-expanded="false"
               aria-label="Toggle navigation"
-              className="navbar-toggler"
-              data-bs-target="#headerNav"
-              data-bs-toggle="collapse"
+              className={`navbar-toggler ${showModal ? "open" : "closed"}`}
+              onClick={toggleModal}
               type="button"
             >
               <span className="navbar-toggler-icon">
-                <FontAwesomeIcon
-                  icon={["fas", "fa-bars"]}
-                  size="2x"
-                />
+                <div className="hamburger-icon" />
               </span>
             </button>
-            <MenuList />
+            {showModal && !isDesktop ? (
+              <MenuModal
+                showModal={showModal}
+                closeModal={closeModal}
+                scrollPosition={scrollPosition}
+              />
+            ) : (
+              <MenuList />
+            )}
           </div>
           <CartIcon />
           {isCartOpen && (

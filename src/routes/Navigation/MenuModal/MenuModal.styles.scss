@@ -1,0 +1,50 @@
+.modal {
+  opacity: 0;
+  background-color: transparent;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+    @media screen and (min-width: 576px) and (max-width: 767px) {
+      max-width: 540px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+      max-width: 720px;
+    }
+
+    padding: 0 12px;
+    border: 0;
+    border-radius: 0;
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+
+  .modal-dialog {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    top: calc(46px + 71px);
+    max-width: 100%;
+    padding: {
+      top: 15px;
+      bottom: 15px;
+    }
+    margin: {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &.scrolled {
+      top: 71px;
+    }
+  }
+}

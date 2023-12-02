@@ -6,11 +6,14 @@ import { signOutUser } from "../../../utils/firebase/firebase.utils"
 
 import data from "../../../data/page-content.json"
 
+import useScreenWidth from "../../../hook/useScreenWidth"
+
 import { UserContext } from "../../../contexts/user.context"
 
 import "./MenuList.styles.scss"
 
-const MenuList = () => {
+const MenuList = ({ showModal }) => {
+  const isDesktop = useScreenWidth(992)
   const { currentUser } = useContext(UserContext)
   const location = useLocation()
 
@@ -20,10 +23,11 @@ const MenuList = () => {
 
   return (
     <div
-      className="collapse navbar-collapse offset-lg-1"
-      id="headerNav"
+      className={`navbar-collapse offset-lg-1 ${!showModal ? "collapse" : ""}`.trim()}
     >
-      <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+      <ul
+        className={`navbar-nav mx-auto mb-lg-0 ${isDesktop ? "mb-2" : ""}`.trim()}
+      >
         {data.header_links.map((link) => (
           <li
             className="nav-item"
