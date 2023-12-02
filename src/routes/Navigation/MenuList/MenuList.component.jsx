@@ -45,14 +45,14 @@ const MenuList = ({ showModal }) => {
         <li className="nav-item">
           {currentUser ? (
             <span
-              className="nav-link navbar--link"
+              className="nav-link navbar-link"
               onClick={signOutUser}
             >
               Sign Out
             </span>
           ) : (
             <Link
-              className="nav-link navbar--link"
+              className="nav-link navbar-link"
               to="/auth"
             >
               Sign In
