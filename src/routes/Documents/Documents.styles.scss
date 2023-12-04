@@ -30,6 +30,10 @@
     margin-bottom: 50px;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .documents-header {
     text-transform: uppercase;
     color: #005547;

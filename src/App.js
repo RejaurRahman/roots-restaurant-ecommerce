@@ -21,25 +21,25 @@ import "./styles/styles.scss"
 
 const App = () => {
   return (
-    <div className="app">
+    <>
       <Routes>
         <Route path="/" element={<Navigation />}>
-          <Route path="/about" element={<About />} />
+          <Route path="about" element={<About />} />
           <Route path="auth" element={<Authentication />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/coronavirus-faq" element={<CoronavirusFAQ />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="coronavirus-faq" element={<CoronavirusFAQ />} />
+          <Route path="faq" element={<FAQ />} />
           <Route index element={<Home />}  />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          <Route path="/sustainability" element={<Sustainability />} />
-          <Route path="/terms-and-conditions" element={<TermsConditions />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="shop/*" element={<Shop />} />
+          <Route path="sitemap" element={<Sitemap />} />
+          <Route path="sustainability" element={<Sustainability />} />
+          <Route path="terms-and-conditions" element={<TermsConditions />} />
         </Route>
       </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -13,7 +13,6 @@
     {
       "text": "Shop",
       "href": "/shop",
-      "dropdown": true,
       "order": 3
     },
     {

@@ -14,8 +14,8 @@ const Shop = () => {
   return (
     <>
       <PageBanner label="Shop" />
+      <Breadcrumbs label="Shop" />
       <div className="products-container container">
-        <Breadcrumbs label="Shop" />
         {
           products.map(({ product }) => (
             <ProductCard
