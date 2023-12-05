@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faRightLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import CategoryItem from "../CategoryItem/CategoryItem.component"
+import DirectoryItem from "../DirectoryItem/DirectoryItem.component"
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import "swiper/css"
@@ -74,7 +74,8 @@ const Directory = ({ categories }) => {
           className="directory-item"
           key={category.id}
         >
-          <CategoryItem
+          <DirectoryItem
+            key={category.id}
             category={category}
           />
         </SwiperSlide>

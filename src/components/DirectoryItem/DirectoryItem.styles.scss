@@ -1,4 +1,4 @@
-.category-container {
+.directory-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,13 +39,13 @@
       transform: scale(1.1);
     }
 
-    & .category-body-container {
+    & .directory-body-container {
       opacity: 0.9;
     }
   }
 
   &:last-child {
-    .category-body-container p {
+    .directory-body-container p {
       background-color: #fff;
       color: #088972;
     }
@@ -63,7 +63,7 @@
     transition: transform 0.6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 
-  .category-body-container {
+  .directory-body-container {
     display: flex;
     flex-flow: column;
     position: absolute;

@@ -3,13 +3,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import Button from "../Button/Button.component"
 
-import "./CategoryItem.styles.scss"
+import "./DirectoryItem.styles.scss"
 
-const CategoryItem = ({ category }) => {
-  const { imageUrl, title } = category
+const DirectoryItem = ({ directory }) => {
+  const { imageUrl, title } = directory
 
   return (
-    <div className="category-container">
+    <div className="directory-container">
       <LazyLoadImage
         alt={title}
         className="background-image"
@@ -17,7 +17,7 @@ const CategoryItem = ({ category }) => {
         src={imageUrl}
         width={351}
       />
-      <div className="category-body-container">
+      <div className="directory-body-container">
         <h2>
           {title}
         </h2>
@@ -31,4 +31,4 @@ const CategoryItem = ({ category }) => {
   )
 }
 
-export default CategoryItem
+export default DirectoryItem
