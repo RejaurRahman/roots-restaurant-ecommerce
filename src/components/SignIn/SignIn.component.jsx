@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import {
   createUserDocumentFromAuth,
@@ -19,6 +20,11 @@ const defaultFormFields = {
 const SignIn = ({ toggleComponent }) => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
+  const navigate = useNavigate()
+
+  const homeRoute = () => {
+    navigate("/")
+  }
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
@@ -26,6 +32,8 @@ const SignIn = ({ toggleComponent }) => {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup()
+
+    homeRoute()
   }
 
   const handleSubmit = async (event) => {
@@ -34,6 +42,8 @@ const SignIn = ({ toggleComponent }) => {
     try {
       await signInAuthUserWithEmailAndPassword(email, password)
       resetFormFields()
+
+      homeRoute()
     } catch (error) {
       console.log("User sign in failed", error)
     }
