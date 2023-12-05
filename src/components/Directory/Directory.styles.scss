@@ -1,4 +1,4 @@
-.directory-container {
+.directory-wrapper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -42,14 +42,14 @@
   &:nth-child(2),
   &:nth-child(6),
   &:nth-child(7) {
-    .category-body-container {
+    .directory-body-container {
       bottom: 30px;
     }
   }
 
   &:nth-child(1),
   &:nth-child(7) {
-    .category-body-container {
+    .directory-body-container {
       right: 30px;
       align-items: flex-end;
     }
@@ -57,7 +57,7 @@
 
   &:nth-child(2),
   &:nth-child(6) {
-    .category-body-container {
+    .directory-body-container {
       left: 30px;
     }
   }
@@ -65,7 +65,7 @@
   &:nth-child(3) {
     flex-basis: 100%;
 
-    .category-body-container {
+    .directory-body-container {
       align-items: center;
       justify-content: center;
     }

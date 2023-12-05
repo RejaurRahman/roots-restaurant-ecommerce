@@ -5,8 +5,8 @@ import Button from "../Button/Button.component"
 
 import "./DirectoryItem.styles.scss"
 
-const DirectoryItem = ({ directory }) => {
-  const { imageUrl, title } = directory
+const DirectoryItem = ({ category }) => {
+  const { imageUrl, title } = category
 
   return (
     <div className="directory-container">

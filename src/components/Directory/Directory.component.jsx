@@ -39,7 +39,7 @@ const Directory = ({ categories }) => {
 
   return (
     <Swiper
-      className="directory-container container"
+      className="directory-wrapper container"
       loop={!isDesktop}
       modules={[Navigation]}
       navigation={{
