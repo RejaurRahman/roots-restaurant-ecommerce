@@ -4,7 +4,7 @@ import { CategoriesContext } from "../../contexts/categories.context"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
-import ProductCard from "../../components/ProductCard/ProductCard.component"
+import CategoryPreview from "../../components/CategoryPreview/CategoryPreview.component"
 
 import "./Shop.styles.scss"
 
@@ -15,23 +15,19 @@ const Shop = () => {
     <>
       <PageBanner label="Shop" />
       <Breadcrumbs label="Shop" />
-      <div className="products-container container">
+      <div className="shop-container container">
         {
-          Object.keys(categoriesMap).map((title) => (
-            <div key={title}>
-              <h2>{title}</h2>
-              <div className="products-container">
-                {
-                  categoriesMap[title].map((product) => (
-                    <ProductCard
-                      key={product.id}
-                      product={product}
-                    />
-                  ))
-                }
-              </div>
-            </div>
-          ))
+          Object.keys(categoriesMap).map((key) => {
+            const products = categoriesMap[key]
+
+            return (
+              <CategoryPreview
+                key={key}
+                products={products}
+                title={key}
+              />
+            )
+          })
         }
       </div>
     </>
