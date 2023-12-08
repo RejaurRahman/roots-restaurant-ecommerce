@@ -17,7 +17,7 @@ const Shop = () => {
       <Breadcrumbs label="Shop" />
       <div className="products-container container">
         {
-          products.map(({ product }) => (
+          products?.map(({ product }) => (
             <ProductCard
               key={product.id}
               product={product}
