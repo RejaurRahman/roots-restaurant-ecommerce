@@ -1,10 +1,13 @@
 import React, { useContext } from "react"
+import { Link } from "react-router-dom"
 
 import { CartContext } from "../../contexts/cart.context"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import CheckoutProduct from "./CheckoutProduct/CheckoutProduct.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
+
+import emptyBasket from "../../assets/images/basket-icon.png"
 
 import "./Checkout.styles.scss"
 
@@ -17,34 +20,45 @@ const Checkout = () => {
     <>
       <PageBanner label="Checkout" />
       <Breadcrumbs label="Checkoct" />
-      <div className="checkout-container">
-        <div className="checkout-header">
-          <div className="header-block">
-            <span>Product</span>
+      {cartItems.length > 0 ? (
+        <div className="cart-container container">
+          <div className="cart-table">
+            <div className="cart-table-header">
+              <div className="cart-table-half cart-table-left">
+                <div className="cart-table-third">&nbsp;</div>
+                <div className="cart-table-seventh">Product Name</div>
+              </div>
+              <div className="cart-table-sixth">Price</div>
+              <div className="cart-table-sixth">Quantity</div>
+              <div className="cart-table-sixth">Remove</div>
+            </div>
+            <div className="cart-table-content">
+              {
+                cartItems.map((cartItem) => (
+                  <CheckoutProduct
+                    key={cartItem.id}
+                    cartItem={cartItem}
+                  />
+                ))
+              }
+            </div>
           </div>
-          <div className="header-block">
-            <span>Description</span>
-          </div>
-          <div className="header-block">
-            <span>Quantity</span>
-          </div>
-          <div className="header-block">
-            <span>Price</span>
-          </div>
-          <div className="header-block">
-            <span>Remove</span>
+          <div className="total">Total: {formattedPrice}</div>
+        </div>
+      ) : (
+        <div className="container">
+          <div class="cart-empty">
+            <img src={emptyBasket} alt="Basket Icon" class="cart-empty-image" />
+            <p>Your basket is currently empty.</p>
+            <p>Fill your boots (and your basket)</p>
+            <p>
+              and{" "}
+              <Link to="/shop">continue shopping</Link>
+              .
+            </p>
           </div>
         </div>
-        {
-          cartItems.map((cartItem) => (
-            <CheckoutProduct
-              key={cartItem.id}
-              cartItem={cartItem}
-            />
-          ))
-        }
-        <span className="total">Total: {formattedPrice}</span>
-      </div>
+      )}
     </>
   )
 }
