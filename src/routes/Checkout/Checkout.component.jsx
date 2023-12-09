@@ -22,9 +22,9 @@ const Checkout = () => {
       <Breadcrumbs label="Checkoct" />
       {cartItems.length > 0 ? (
         <div className="cart-container container">
-          <p class="cart-status">
+          <p className="cart-status">
             You have{" "}
-            <span class="cart-status-count">{cartItems.length}</span>
+            <span className="cart-status-count">{cartItems.length}</span>
             {" "}
             {cartItems.length > 1 ? (
               "items"
@@ -58,8 +58,8 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="container">
-          <div class="cart-empty">
-            <img src={emptyBasket} alt="Basket Icon" class="cart-empty-image" />
+          <div className="cart-empty">
+            <img src={emptyBasket} alt="Basket Icon" className="cart-empty-image" />
             <p>Your basket is currently empty.</p>
             <p>Fill your boots (and your basket)</p>
             <p>
