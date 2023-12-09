@@ -22,6 +22,8 @@ const CheckoutProduct = ({ cartItem }) => {
   const addItemHandler = () => addItemToCart(cartItem)
   const removeItemHandler = () => removeItemToCart(cartItem)
 
+  const formattedPrice = `£${price.toFixed(2)}`
+
   return (
     <div className="checkout-item-container">
       <div className="image-container">
@@ -43,7 +45,7 @@ const CheckoutProduct = ({ cartItem }) => {
           &#10095;
         </div>
       </span>
-      <span className="price">{price}</span>
+      <span className="price">{formattedPrice}</span>
       <span
         className="remove-button"
         onClick={clearItemHandler}

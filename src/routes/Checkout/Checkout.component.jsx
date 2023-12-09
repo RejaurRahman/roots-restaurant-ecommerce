@@ -9,6 +9,8 @@ import "./Checkout.styles.scss"
 const Checkout = () => {
   const { cartItems, cartTotal } = useContext(CartContext)
 
+  const formattedPrice = `£${cartTotal.toFixed(2)}`
+
   return (
     <div className="checkout-container">
       <div className="checkout-header">
@@ -36,7 +38,7 @@ const Checkout = () => {
           />
         ))
       }
-      <span className="total">Total: ${cartTotal}</span>
+      <span className="total">Total: {formattedPrice}</span>
     </div>
   )
 }

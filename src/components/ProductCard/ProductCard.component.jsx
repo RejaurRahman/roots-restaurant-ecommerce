@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
 
   const addProductToCart = () => addItemToCart(product)
 
-  const formattedPrice = `£${price.toFixed(2)}`;
+  const formattedPrice = `£${price.toFixed(2)}`
 
   return (
     <div className="product-card-container">
