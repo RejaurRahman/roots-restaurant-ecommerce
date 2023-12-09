@@ -13,6 +13,8 @@ const ProductCard = ({ product }) => {
 
   const addProductToCart = () => addItemToCart(product)
 
+  const formattedPrice = `£${price.toFixed(2)}`;
+
   return (
     <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
@@ -21,7 +23,7 @@ const ProductCard = ({ product }) => {
           {name}
         </span>
         <span className="price">
-          {price}
+          {formattedPrice}
         </span>
       </div>
       <Button

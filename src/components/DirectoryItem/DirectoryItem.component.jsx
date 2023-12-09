@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useCallback } from "react"
+import { useNavigate } from "react-router-dom"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import Button from "../Button/Button.component"
@@ -6,7 +7,12 @@ import Button from "../Button/Button.component"
 import "./DirectoryItem.styles.scss"
 
 const DirectoryItem = ({ category }) => {
+  const navigate = useNavigate()
   const { imageUrl, title } = category
+
+  const onNavigateHandler = useCallback(() => {
+    navigate(`/shop/${title}`.toLowerCase())
+  }, [navigate, title])
 
   return (
     <div className="directory-container">
@@ -23,6 +29,7 @@ const DirectoryItem = ({ category }) => {
         </h2>
         <Button
           buttonType="transparent"
+          onClick={onNavigateHandler}
         >
           Shop Now
         </Button>

@@ -9,7 +9,7 @@ import { CategoriesContext } from "../../contexts/categories.context"
 
 import ProductCard from "../../components/ProductCard/ProductCard.component"
 
-import "./category.styles.scss"
+import "./Category.styles.scss"
 
 const Category = () => {
   const { category } = useParams()

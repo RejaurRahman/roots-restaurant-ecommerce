@@ -17,7 +17,7 @@ const Home = () => {
     {
       id: 1,
       title: "Soup",
-      imageUrl: Soup
+      imageUrl: Soup,
     },
     {
       id: 2,
