@@ -22,6 +22,17 @@ const Checkout = () => {
       <Breadcrumbs label="Checkoct" />
       {cartItems.length > 0 ? (
         <div className="cart-container container">
+          <p class="cart-status">
+            You have{" "}
+            <span class="cart-status-count">{cartItems.length}</span>
+            {" "}
+            {cartItems.length > 1 ? (
+              "items"
+            ) : (
+              "item"
+            )}
+            {" "}in your order.
+          </p>
           <div className="cart-table">
             <div className="cart-table-header">
               <div className="cart-table-half cart-table-left">
