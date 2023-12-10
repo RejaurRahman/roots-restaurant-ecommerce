@@ -58,12 +58,12 @@ const SignUp = ({ toggleComponent }) => {
         password
       )
 
-      await createUserDocumentFromAuth(user, {displayName})
+      await createUserDocumentFromAuth(user, { displayName })
 
       resetFormFields()
 
       homeRoute()
-    } catch(error) {
+    } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use")
       } else {
