@@ -84,7 +84,9 @@ const Menu = () => {
               <MenuList />
             )}
           </div>
-          <CartIcon />
+          <CartIcon
+            cartDisplay={isCartOpen}
+          />
           {isCartOpen && (
             <CartDropdown />
           )}

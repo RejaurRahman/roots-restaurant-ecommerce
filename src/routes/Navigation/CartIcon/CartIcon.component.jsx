@@ -12,7 +12,7 @@ library.add(
   faBagShopping
 )
 
-const CartIcon = () => {
+const CartIcon = ({ cartDisplay }) => {
   const {
     cartCount,
     isCartOpen,
@@ -35,6 +35,12 @@ const CartIcon = () => {
           {cartCount}
         </span>
       </button>
+      {cartDisplay && (
+        <div
+          className="navbar-cart-overlay"
+          onClick={toggleIsCartOpen}
+        />
+      )}
     </div>
   )
 }
