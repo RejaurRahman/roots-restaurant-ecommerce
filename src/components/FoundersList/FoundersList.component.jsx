@@ -21,7 +21,10 @@ const FoundersList = () => {
           const imagePath = imagePaths[index % imagePaths.length]
 
           return (
-            <div className="col-12 col-lg-6 founders-item">
+            <div
+              className="col-12 col-lg-6 founders-item"
+              key={index}
+            >
               <LazyLoadImage
                 src={imagePath}
                 className="founders-image mx-auto"
