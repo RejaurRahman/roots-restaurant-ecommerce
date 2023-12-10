@@ -18,7 +18,11 @@ const MenuList = ({ showModal }) => {
   const location = useLocation()
 
   const isActive = (to) => {
-    return to === location.pathname
+    if (to === "/") {
+      return location.pathname === to
+    }
+
+    return location.pathname.includes(to)
   }
 
   return (

@@ -3,7 +3,9 @@ import { Link } from "react-router-dom"
 
 import "./Breadcrumbs.styles.scss"
 
-const Breadcrumbs = ({ label }) => {
+const Breadcrumbs = ({
+  label
+}) => {
   return (
     <div className="breadcrumb-container container">
       <div className="row">
