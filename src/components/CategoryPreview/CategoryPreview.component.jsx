@@ -14,6 +14,10 @@ library.add(
 )
 
 const CategoryPreview = ({ title, products }) => {
+  if (!products || !Array.isArray(products)) {
+    return null
+  }
+
   return (
     <div className="category-preview-container">
       <div className="category-title-container container">

@@ -7,10 +7,24 @@ import CategoryPreview from "../../components/CategoryPreview/CategoryPreview.co
 const CategoriesPreview = () => {
   const { categoriesMap } = useContext(CategoriesContext)
 
+  const foodOrder = [
+    "soup",
+    "salad",
+    "pasta",
+    "pizza",
+    "curry",
+    "desert",
+    "drinks"
+  ]
+
+  if (!categoriesMap) {
+    return null
+  }
+
   return (
     <>
       {
-        Object.keys(categoriesMap).map((title, index) => {
+        foodOrder.map((title, index) => {
           const products = categoriesMap[title]
 
           return (

@@ -14,9 +14,9 @@ const Shop = () => {
       <PageBanner label="Shop" />
       <Breadcrumbs label="Shop" />
       <Routes>
-      <Route index element={<CategoriesPreview />} />
-      <Route path=":category" element={<Category />} />
-    </Routes>
+        <Route index element={<CategoriesPreview />} />
+        <Route path=":category" element={<Category />} />
+      </Routes>
     </>
   )
 }
