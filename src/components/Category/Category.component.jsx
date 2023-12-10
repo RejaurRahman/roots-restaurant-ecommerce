@@ -25,17 +25,19 @@ const Category = () => {
       <h2 className="category-title">
         {category.toUpperCase()}
       </h2>
-      <div className="category-container">
-        {
-          products && (
-            products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-            ))
-          )
-        }
+      <div className="container">
+        <div className="row">
+          {
+            products && (
+              products.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  product={product}
+                />
+              ))
+            )
+          }
+        </div>
       </div>
     </>
   )

@@ -10,14 +10,14 @@ const CategoriesPreview = () => {
   return (
     <>
       {
-        Object.keys(categoriesMap).map((title) => {
+        Object.keys(categoriesMap).map((title, index) => {
           const products = categoriesMap[title]
 
           return (
             <CategoryPreview
-              key={title}
-              title={title}
+              key={index}
               products={products}
+              title={title}
             />
           )
         })

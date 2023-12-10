@@ -45,10 +45,10 @@ const Checkout = () => {
             </div>
             <div className="cart-table-content">
               {
-                cartItems.map((cartItem) => (
+                cartItems.map((cartItem, index) => (
                   <CheckoutProduct
-                    key={cartItem.id}
                     cartItem={cartItem}
+                    key={index}
                   />
                 ))
               }

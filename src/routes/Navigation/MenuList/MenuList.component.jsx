@@ -32,10 +32,10 @@ const MenuList = ({ showModal }) => {
       <ul
         className={`navbar-nav mx-auto mb-lg-0 ${isDesktop ? "mb-2" : ""}`.trim()}
       >
-        {data.header_links.map((link) => (
+        {data.header_links.map((link, index) => (
           <li
             className="nav-item"
-            key={link.text}
+            key={index}
           >
             <Link
               aria-current="page"

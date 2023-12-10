@@ -14,10 +14,10 @@ const CartDropdown = () => {
     <div className="cart-dropdown-container">
       <div className="cart-items">
         {
-          cartItems.map(item => (
+          cartItems.map((item, index) => (
             <CartProducts
-              key={item.id}
               CartItem={item}
+              key={index}
             />
           )
         )}

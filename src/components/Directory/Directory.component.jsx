@@ -69,10 +69,10 @@ const Directory = ({ categories }) => {
           </div>
         </div>
       )}
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <SwiperSlide
           className="directory-item"
-          key={category.id}
+          key={index}
         >
           <DirectoryItem
             key={category.id}
