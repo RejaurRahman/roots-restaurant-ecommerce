@@ -78,7 +78,7 @@ const ContactForm = () => {
             />
 
             <Button
-              buttonType="primary"
+              buttonClassType="primary"
               type="submit"
             >
               Send Message

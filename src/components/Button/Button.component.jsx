@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import "./Button.styles.scss"
 
@@ -12,13 +13,23 @@ const BUTTON_TYPE_CLASSES = {
 }
 
 const Button = ({
-  children,
+  buttonClassType,
   buttonType,
+  children,
+  linkRoute,
   ...otherProps
 }) => {
-  return (
+  return buttonType === "anchor" ? (
+    <Link
+      className={`button-container ${BUTTON_TYPE_CLASSES[buttonClassType]}`}
+      to={linkRoute}
+      {...otherProps}
+    >
+      {children}
+    </Link>
+  ) : (
     <button
-      className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
+      className={`button-container ${BUTTON_TYPE_CLASSES[buttonClassType]}`}
       {...otherProps}
     >
       {children}

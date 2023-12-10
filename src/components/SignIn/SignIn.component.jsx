@@ -64,7 +64,7 @@ const SignIn = ({ toggleComponent }) => {
       >
         <div className="social-login">
           <Button
-            buttonType="google"
+            buttonClassType="google"
             type="button"
             onClick={signInWithGoogle}
           >
@@ -94,14 +94,14 @@ const SignIn = ({ toggleComponent }) => {
         />
 
         <Button
-          buttonType="secondary"
+          buttonClassType="secondary"
           type="submit"
         >
           Sign In
         </Button>
       </form>
       <Button
-        buttonType="inverted"
+        buttonClassType="inverted"
         onClick={toggleComponent}
       >
         Register An Account

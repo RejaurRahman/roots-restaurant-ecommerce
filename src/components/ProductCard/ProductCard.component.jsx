@@ -27,7 +27,7 @@ const ProductCard = ({ product }) => {
         </span>
       </div>
       <Button
-        buttonType="inverted"
+        buttonClassType="inverted"
         onClick={addProductToCart}
       >
         Add to Cart
