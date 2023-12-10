@@ -11,6 +11,13 @@
   right: 40px;
   z-index: 5;
 
+  .cart-dropdown-empty {
+    justify-content: center;
+    align-items: center;
+    color: #005547;
+    font-weight: bold;
+  }
+
   .empty-message {
     font-size: 18px;
     margin: {

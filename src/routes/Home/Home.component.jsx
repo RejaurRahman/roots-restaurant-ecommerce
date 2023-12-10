@@ -41,7 +41,7 @@ const Home = () => {
     },
     {
       id: 6,
-      title: "Deserts",
+      title: "Desert",
       imageUrl: Deserts
     },
     {

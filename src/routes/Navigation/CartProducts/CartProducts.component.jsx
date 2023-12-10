@@ -1,4 +1,5 @@
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import "./CartProducts.styles.scss"
 
@@ -9,7 +10,10 @@ const CartProducts = ({ CartItem }) => {
 
   return (
     <div className="cart-item-container">
-      <img src={imageUrl} alt={`${name}`} />
+      <LazyLoadImage
+        src={imageUrl}
+        alt={`${name}`}
+      />
       <div className="item-details">
         <span className="name">{name}</span>
         <span className="price">

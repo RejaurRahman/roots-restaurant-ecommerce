@@ -59,7 +59,11 @@ const Checkout = () => {
       ) : (
         <div className="container">
           <div className="cart-empty">
-            <img src={emptyBasket} alt="Basket Icon" className="cart-empty-image" />
+            <img
+              alt="Basket Icon"
+              className="cart-empty-image"
+              src={emptyBasket}
+            />
             <p>Your basket is currently empty.</p>
             <p>Fill your boots (and your basket)</p>
             <p>

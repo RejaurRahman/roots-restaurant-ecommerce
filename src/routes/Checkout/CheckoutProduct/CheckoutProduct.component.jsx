@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import { CartContext } from "../../../contexts/cart.context"
 
@@ -28,7 +29,11 @@ const CheckoutProduct = ({ cartItem }) => {
     <div className="cart-table-item">
       <div className="cart-table-half cart-table-image-wrapper">
         <div className="cart-table-third">
-          <img src={imageUrl} alt={name} className="cart-table-image" />
+          <LazyLoadImage
+            alt={name}
+            className="cart-table-image"
+            src={imageUrl}
+          />
         </div>
         <div className="cart-table-seventh">
           <h4 className="cart-table-product">{name}</h4>

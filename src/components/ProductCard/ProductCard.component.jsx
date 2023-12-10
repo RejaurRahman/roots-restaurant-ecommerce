@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import { CartContext } from "../../contexts/cart.context"
 
@@ -24,7 +25,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card-container col-12 col-md-6 col-lg-6 col-xl-4">
-      <img
+      <LazyLoadImage
         alt={name}
         className="product-item-image"
         src={imageUrl}

@@ -12,15 +12,21 @@ const CartDropdown = () => {
 
   return (
     <div className="cart-dropdown-container">
-      <div className="cart-items">
+      <div className={`cart-items ${cartItems.length === 0 ? "cart-dropdown-empty" : ""}`.trim()}>
         {
-          cartItems.map((item, index) => (
-            <CartProducts
-              CartItem={item}
-              key={index}
-            />
+          cartItems.length ? (
+            cartItems.map((item, index) => (
+              <CartProducts
+                cartItem={item}
+                key={index}
+              />
+            ))
+          ) : (
+            <span>
+              Your cart is empty
+            </span>
           )
-        )}
+        }
       </div>
       <Button
         buttonClassType="primary"
