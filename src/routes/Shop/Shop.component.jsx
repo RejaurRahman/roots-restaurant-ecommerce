@@ -1,14 +1,29 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Routes, Route } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
 import Category from "../../components/Category/Category.component"
 import CategoriesPreview from "../CategoriesPreview/CategoriesPreview.component"
 
+import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils"
+import { setCategories } from "../../store/categories/category.action"
+
 import "./Shop.styles.scss"
 
 const Shop = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoryArray = await getCategoriesAndDocuments("categories")
+      dispatch(setCategories(categoryArray))
+    }
+
+    getCategoriesMap()
+  })
+
   return (
     <>
       <PageBanner label="Shop" />
