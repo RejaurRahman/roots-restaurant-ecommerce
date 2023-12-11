@@ -1,6 +1,12 @@
-import React from "react"
-
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
+
+import { setCurrentUser } from "./store/user/user.action"
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+} from "./utils/firebase/firebase.utils"
 
 import About from "./routes/About/About.component"
 import Authentication from "./routes/Authentication/Authentication.component"
@@ -20,6 +26,20 @@ import TermsConditions from "./routes/Documents/TermsConditions.component"
 import "./styles/styles.scss"
 
 const App = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user)
+      }
+
+      dispatch(setCurrentUser(user))
+    })
+
+    return unsubscribe
+  })
+
   return (
     <>
       <Routes>
