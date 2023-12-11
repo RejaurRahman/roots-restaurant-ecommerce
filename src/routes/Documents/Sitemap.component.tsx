@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { Link } from "react-router-dom"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
@@ -6,7 +6,7 @@ import PageBanner from "../../components/PageBanner/PageBanner.component"
 
 import "./Documents.styles.scss"
 
-const Sitemap = () => {
+const Sitemap: FC = () => {
   return (
     <>
       <PageBanner label="Sitemap" />

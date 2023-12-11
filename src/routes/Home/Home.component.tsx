@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import Directory from "../../components/Directory/Directory.component"
 import MainBanner from "../../components/MainBanner/MainBanner.component"
@@ -12,7 +12,7 @@ import Pizza from "../../assets/images/cover/pizza.jpg"
 import Salad from "../../assets/images/cover/salad.jpg"
 import Soup from "../../assets/images/cover/soup.jpg"
 
-const Home = () => {
+const Home: FC = () => {
   const categories = [
     {
       id: 1,

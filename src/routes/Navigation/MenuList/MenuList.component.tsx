@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import {
   useDispatch,
   useSelector
@@ -16,7 +16,11 @@ import { selectCurrentUser } from "../../../store/user/user.selector"
 
 import "./MenuList.styles.scss"
 
-const MenuList = ({ showModal }) => {
+interface MenuListProps {
+  showModal: boolean
+}
+
+const MenuList: FC<MenuListProps> = ({ showModal }) => {
   const dispatch = useDispatch()
   const isDesktop = useScreenWidth(992)
   const currentUser = useSelector(selectCurrentUser)
@@ -24,7 +28,7 @@ const MenuList = ({ showModal }) => {
 
   const signOutUser = () => dispatch(signOutStart())
 
-  const isActive = (to) => {
+  const isActive = (to: string) => {
     if (to === "/") {
       return location.pathname === to
     }

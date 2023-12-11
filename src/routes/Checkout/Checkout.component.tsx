@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
@@ -16,7 +16,7 @@ import emptyBasket from "../../assets/images/basket-icon.png"
 
 import "./Checkout.styles.scss"
 
-const Checkout = () => {
+const Checkout: FC = () => {
   const cartItems = useSelector(selectCartItems)
   const cartTotal = useSelector(selectCartTotal)
 

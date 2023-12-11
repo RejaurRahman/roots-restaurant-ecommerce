@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import {
@@ -13,11 +13,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import "./CartIcon.styles.scss"
 
+interface CartIconProps {
+  cartDisplay: boolean
+}
+
 library.add(
   faBagShopping
 )
 
-const CartIcon = ({ cartDisplay }) => {
+const CartIcon: FC<CartIconProps> = ({ cartDisplay }) => {
   const dispatch = useDispatch()
   const isCartOpen = useSelector(selectIsCartOpen)
   const cartCount = useSelector(selectCartCount)
@@ -31,7 +35,7 @@ const CartIcon = ({ cartDisplay }) => {
         onClick={toggleIsCartOpen}
       >
         <FontAwesomeIcon
-          icon={["fas", "fa-bag-shopping"]}
+          icon={faBagShopping}
           size="2x"
         />
         <span className="navbar-product-icon-value">

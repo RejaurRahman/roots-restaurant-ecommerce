@@ -1,14 +1,14 @@
-import React from "react"
+import React, { FC } from "react"
 import { useSelector } from "react-redux"
 
 import { selectCartItems } from "../../../store/cart/cart.selector"
 
-import Button from "../../../components/Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../../../components/Button/Button.component"
 import CartProducts from "../CartProducts/CartProducts.component"
 
 import "./CartDropdown.styles.scss"
 
-const CartDropdown = () => {
+const CartDropdown: FC = () => {
   const cartItems = useSelector(selectCartItems)
 
   return (
@@ -30,7 +30,7 @@ const CartDropdown = () => {
         }
       </div>
       <Button
-        buttonClassType="primary"
+        buttonClassType={BUTTON_TYPE_CLASSES.primary}
         buttonType="anchor"
         linkRoute="/checkout"
       >

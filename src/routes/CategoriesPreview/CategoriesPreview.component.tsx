@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { useSelector } from "react-redux"
 
 import {
@@ -9,7 +9,7 @@ import {
 import CategoryPreview from "../../components/CategoryPreview/CategoryPreview.component"
 import Spinner from "../../components/Spinner/Spinner.component"
 
-const CategoriesPreview = () => {
+const CategoriesPreview: FC = () => {
   const categoriesMap = useSelector(selectCategoriesMap)
   const isLoading = useSelector(selectCategoriesIsLoading)
 

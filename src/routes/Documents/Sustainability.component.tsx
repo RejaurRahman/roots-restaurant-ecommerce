@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 
 import Accordion from "../../components/Accordion/Accordion.component"
 import AccordionItem from "../../components/Accordion/AccordionItem/AccordionItem.component"
@@ -7,7 +7,7 @@ import PageBanner from "../../components/PageBanner/PageBanner.component"
 
 import "./Documents.styles.scss"
 
-const Sustainability = () => {
+const Sustainability: FC = () => {
   return (
     <>
       <PageBanner label="Sustainability" />
@@ -20,13 +20,13 @@ const Sustainability = () => {
 
             <Accordion className="documents-accordion">
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={0}
+                isList={false}
                 title="100% organic or sustainably wild food"
               >
-                <p>Basically, natural cultivating implies food as it ought to be; food you can trust, food that doesn&apos;t cost the earth, and food where the creatures are treated with deference. It&apos;s a scrupulous method of watching out for the land that is kinder. Natural cultivating consistently implies:</p>
+                <p>Basically, natural cultivating implies food as it ought to be food you can trust, food that doesn&apos;t cost the earth, and food where the creatures are treated with deference. It&apos;s a scrupulous method of watching out for the land that is kinder. Natural cultivating consistently implies:</p>
                 <ul>
                   <li>No manufactured showers (pesticides, manures, fungicides, bug sprays).</li>
                   <li>No counterfeit tones or additives.</li>
@@ -35,13 +35,13 @@ const Sustainability = () => {
                   <li>The best quality level for creature government assistance (stunningly better than unfenced!).</li>
                   <li>No GM fixings.</li>
                 </ul>
-                <p>Nearly all that we do is natural; just things that can&apos;t be authoritatively confirmed, similar to water, salt, wild game, ocean got fish, and scrounged food are definitely not. This is on the grounds that they have not been &apos;cultivated&apos; and hence aren&apos;t controlled under natural norms. We work intimately with every one of our providers however to realize they focus on morals and climate. Outside of food, our cleaning items (while eco-accommodating) are not natural. All that is guaranteed natural is plainly marked on the site with a little molded image, and on the actual items.</p>
+                <p>Nearly all that we do is natural just things that can&apos;t be authoritatively confirmed, similar to water, salt, wild game, ocean got fish, and scrounged food are definitely not. This is on the grounds that they have not been &apos;cultivated&apos; and hence aren&apos;t controlled under natural norms. We work intimately with every one of our providers however to realize they focus on morals and climate. Outside of food, our cleaning items (while eco-accommodating) are not natural. All that is guaranteed natural is plainly marked on the site with a little molded image, and on the actual items.</p>
               </AccordionItem>
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={1}
+                isList={false}
                 title="92% less plastic in our takeaway boxes"
               >
                 <p>Since 1988 we&apos;ve spearheaded a low plastic way to deal with life. Throughout this time we&apos;ve saved at any rate 60 million plastic sacks by utilizing returnable and reusable cardboard boxes all things being equal. On the off chance that you line up each one of those saved packs they&apos;d fold over the moon multiple times! Vast, huh?</p>
@@ -58,20 +58,20 @@ const Sustainability = () => {
 
             <Accordion className="documents-accordion">
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={2}
+                isList={false}
                 title="Is organic an answer to the climate emergency?"
               >
                 <p>We trust it is a solid competitor! Natural soil is normally sound and strong as it contains billions of microbes that make it ready to store water, nitrogen and different supplements. Sound natural soil ingests more water by putting away as much as 3,750 tons of water for every hectare, which is about 1.5 Olympic pools. This implies it&apos;s more dry season and flood-safe contrasted with non-natural soils.</p>
                 <p>Natural soil additionally sequesters (catches) 450kg more per hectare than non-natural soil and if all UK farmland went natural it&apos;d have similar impact as taking 1.3million vehicles off the street. So natural is without a doubt an awesome instrument in the battle against environmental change.</p>
               </AccordionItem>
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={3}
+                isList={false}
                 title="How does organic affect animal welfare?"
               >
                 <p>Natural accreditation has the most elevated of creature government assistance norms. The Soil Association guarantees Roots Restaurant and their homesteads, and their rigid principles cover everything from everyday environments and food quality, to the utilization of anti-infection agents just as transport and butcher:</p>
@@ -86,10 +86,10 @@ const Sustainability = () => {
                 <p>We just work with ranches that are ensured as clinging to these norms and ensure all animals are treated with deference, and furnished with the room they need to lead a normally solid and cheerful life.</p>
               </AccordionItem>
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={4}
+                isList={false}
                 title="How does organic compare to free range?"
               >
                 <p>It&apos;s far superior! Natural norms request that all creatures have more admittance to the outside and more space than unfenced guidelines.</p>
@@ -102,10 +102,10 @@ const Sustainability = () => {
 
             <Accordion className="documents-accordion">
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={5}
+                isList={false}
                 title="What plastic do you use and why?"
               >
                 <p>We&apos;re plastic-free wannabees though we do rely on some plastic to keep your food fresh and healthy. We only use it when necessary, for two reasons:</p>
@@ -122,10 +122,10 @@ const Sustainability = () => {
                 </ul>
               </AccordionItem>
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={6}
+                isList={false}
                 title="What is Roots Restaurant doing to reduce plastic?"
               >
                 <p>We&apos;ve generally been quick to keep our plastic utilize low and our inclination is consistently to work with producers and creators who utilize negligible, feasible bundling at every possible opportunity.</p>
@@ -139,10 +139,10 @@ const Sustainability = () => {
 
             <Accordion className="documents-accordion">
               <AccordionItem
-                accordionNormal
                 buttonClassName="documents-header"
                 contentClassName="documents-content"
-                index
+                index={7}
+                isList={false}
                 title="Do you use bicycles to deliver your food?"
               >
                 <p>On the off chance that you&apos;ve strolled down a bustling London road over the most recent 5 years you&apos;ll know the number of conveyance vehicles fill the streets. Indeed, even before the 2013 blast of same day conveyances light products vehicles (LGVs) and HGVs represented 33% of street transport nitric and nitrogen oxide (NOx) emanations in Greater London.</p>

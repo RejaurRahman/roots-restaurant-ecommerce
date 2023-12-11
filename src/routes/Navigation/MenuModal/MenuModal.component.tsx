@@ -1,11 +1,17 @@
-import React from "react"
+import React, { FC } from "react"
 import { createPortal } from "react-dom"
 
 import MenuList from "../MenuList/MenuList.component"
 
 import "./MenuModal.styles.scss"
 
-const MenuModal = ({
+interface MenuModalProps {
+  closeModal: () => void
+  scrollPosition: number
+  showModal: boolean
+}
+
+const MenuModal: FC<MenuModalProps> = ({
   closeModal,
   scrollPosition,
   showModal
@@ -17,7 +23,7 @@ const MenuModal = ({
         aria-labelledby="navigationModalLabel"
         className={`modal fade header-modal ${showModal ? "show" : ""}`.trim()}
         onClick={closeModal}
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <div className={`modal-dialog ${scrollPosition > 46 ? "scrolled" : ""}`.trim()}>
           <div className="modal-content">
@@ -27,7 +33,7 @@ const MenuModal = ({
           </div>
         </div>
       </div>,
-      document.getElementById("modal-root")
+      document.getElementById("modal-root")!
     )
   )
 }

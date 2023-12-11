@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
@@ -8,10 +8,15 @@ import {
   removeItemFromCart
 } from "../../../store/cart/cart.action"
 import { selectCartItems } from "../../../store/cart/cart.selector"
+import { CartItem } from "../../../store/cart/cart.types"
 
 import "../Checkout.styles.scss"
 
-const CheckoutProduct = ({ cartItem }) => {
+interface CheckoutProductProps {
+  cartItem: CartItem
+}
+
+const CheckoutProduct: FC<CheckoutProductProps> = ({ cartItem }) => {
   const {
     imageUrl,
     name,

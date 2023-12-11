@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { FC, useEffect } from "react"
 import { Routes, Route } from "react-router-dom"
 import { useDispatch } from "react-redux"
 
@@ -11,7 +11,7 @@ import { fetchCategoriesStart } from "../../store/categories/category.action"
 
 import "./Shop.styles.scss"
 
-const Shop = () => {
+const Shop: FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {

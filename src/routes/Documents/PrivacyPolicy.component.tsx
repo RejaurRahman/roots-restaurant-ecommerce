@@ -1,16 +1,16 @@
-import React from "react"
+import React, { FC } from "react"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
 
 import "./Documents.styles.scss"
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: FC = () => {
   const currentDate = new Date().toLocaleDateString("en-GB", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
+  })
 
   return (
     <>

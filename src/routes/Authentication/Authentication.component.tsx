@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { FC, useState } from "react"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import SignIn from "../../components/SignIn/SignIn.component"
@@ -6,7 +6,7 @@ import SignUp from "../../components/SignUp/SignUp.component"
 
 import "./Authentication.style.scss"
 
-const Authentication = () => {
+const Authentication: FC = () => {
   const [showSignIn, setShowSignIn] = useState(true)
 
   const toggleAuthenticationComponent = () => {

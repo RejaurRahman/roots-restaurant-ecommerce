@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { Outlet } from "react-router-dom"
 import { useSelector } from "react-redux"
 
@@ -9,7 +9,7 @@ import SocialList from "./SocialList/SocialList.component"
 
 import "./Navigation.styles.scss"
 
-const Navigation = () => {
+const Navigation: FC = () => {
   const currentUser = useSelector(selectCurrentUser)
 
   return (

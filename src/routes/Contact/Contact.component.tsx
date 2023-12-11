@@ -1,11 +1,11 @@
-import React from "react"
+import React, { FC } from "react"
 
 import Boxout from "../../components/Boxout/Boxout.component"
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import ContactForm from "../../components/ContactForm/ContactForm.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
 
-const Contact = () => {
+const Contact: FC = () => {
   return (
     <>
       <PageBanner label="Contact" />

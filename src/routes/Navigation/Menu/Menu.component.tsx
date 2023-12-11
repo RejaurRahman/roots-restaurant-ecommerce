@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { FC, useState } from "react"
 import { useSelector } from "react-redux"
 
 import { Link } from "react-router-dom"
@@ -16,7 +16,7 @@ import Logo from "../../../assets/images/logo.png"
 
 import "./Menu.styles.scss"
 
-const Menu = () => {
+const Menu: FC = () => {
   const isDesktop = useScreenWidth(992)
   const isCartOpen = useSelector(selectIsCartOpen)
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -82,7 +82,9 @@ const Menu = () => {
                 scrollPosition={scrollPosition}
               />
             ) : (
-              <MenuList />
+              <MenuList
+                showModal={showModal}
+              />
             )}
           </div>
           <CartIcon

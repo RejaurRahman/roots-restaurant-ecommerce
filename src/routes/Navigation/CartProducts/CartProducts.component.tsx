@@ -1,10 +1,21 @@
-import React from "react"
+import React, { FC } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import "./CartProducts.styles.scss"
 
-const CartProducts = ({ CartItem }) => {
-  const { imageUrl, name, price, quantity } = CartItem
+interface CartItem {
+  imageUrl: string
+  name: string
+  price: number
+  quantity: number
+}
+
+interface CartProductsProps {
+  cartItem: CartItem
+}
+
+const CartProducts: FC<CartProductsProps> = ({ cartItem }) => {
+  const { imageUrl, name, price, quantity } = cartItem
 
   const formattedPrice = `£${price.toFixed(2)}`
 
