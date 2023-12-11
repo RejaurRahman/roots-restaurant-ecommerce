@@ -10,6 +10,7 @@ import {
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import CheckoutProduct from "./CheckoutProduct/CheckoutProduct.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
+import PaymentForm from "../../components/PaymentForm/PaymentForm.component"
 
 import emptyBasket from "../../assets/images/basket-icon.png"
 
@@ -60,6 +61,7 @@ const Checkout = () => {
             </div>
           </div>
           <div className="total">Total: {formattedPrice}</div>
+          <PaymentForm />
         </div>
       ) : (
         <div className="container">
