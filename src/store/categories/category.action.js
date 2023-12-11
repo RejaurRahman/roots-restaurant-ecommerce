@@ -10,6 +10,6 @@ export const fetchCategoriesSuccess = (categoriesArray) => createAction(
   categoriesArray
 )
 
-export const fetchCategoriesFailure = (error) => createAction(
+export const fetchCategoriesFailed = (error) => createAction(
   CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error
 )

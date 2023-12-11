@@ -82,20 +82,23 @@ export function* signUp({
   payload: { email, password, displayName }
 }) {
   try {
-    const { user } = yield call(createAuthUserWithEmailAndPassword, email, password)
-    yield put(
-      signUpSuccess(
-        user, { displayName }
-      )
+    const { user } = yield call(
+      createAuthUserWithEmailAndPassword,
+      email,
+      password
     )
+
+    yield put(signUpSuccess(
+      user, { displayName }
+    ))
   } catch (error) {
-    yield put(signInFailed(error))
+    yield put(signUpFailed(error))
   }
 }
 
 export function* signOut() {
   try {
-  yield call(signOutUser)
+    yield call(signOutUser)
     yield put(signOutSuccess())
   } catch (error) {
     yield put(signOutFailed(error))
@@ -125,7 +128,7 @@ export function* onSignUpStart() {
 }
 
 export function* onSignUpSuccess() {
-  yield takeLatest(USER_ACTION_TYPES.SIGN_IN_SUCCESS, signInAfterSignUp)
+  yield takeLatest(USER_ACTION_TYPES.SIGN_UP_SUCCESS, signInAfterSignUp)
 }
 
 export function* onSignOutStart() {

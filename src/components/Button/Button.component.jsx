@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
+import Spinner from "../Spinner/Spinner.component"
+
 import "./Button.styles.scss"
 
 const BUTTON_TYPE_CLASSES = {
@@ -16,23 +18,34 @@ const Button = ({
   buttonClassType,
   buttonType,
   children,
+  isLoading = false,
   linkRoute,
   ...otherProps
 }) => {
   return buttonType === "anchor" ? (
     <Link
       className={`button-container ${BUTTON_TYPE_CLASSES[buttonClassType]}`}
+      disabled={isLoading}
       to={linkRoute}
       {...otherProps}
     >
-      {children}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        children
+      )}
     </Link>
   ) : (
     <button
       className={`button-container ${BUTTON_TYPE_CLASSES[buttonClassType]}`}
+      disabled={isLoading}
       {...otherProps}
     >
-      {children}
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        children
+      )}
     </button>
   )
 }
