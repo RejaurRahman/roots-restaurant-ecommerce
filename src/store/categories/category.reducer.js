@@ -5,12 +5,12 @@ export const CATEGORIES_INITIAL_STATE = {
 }
 
 export const categoriesReducer = (
-  state = CATEGORIES_INITIAL_STATE,
-  action = {}
+  action = {},
+  state = CATEGORIES_INITIAL_STATE
 ) => {
   const { type, payload } = action
 
-  switch(type) {
+  switch (type) {
     case CATEGORIES_ACTION_TYPES.SET_CATEGORIES:
       return { ...state, categories: payload}
     default:

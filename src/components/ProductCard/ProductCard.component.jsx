@@ -1,7 +1,9 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
-import { CartContext } from "../../contexts/cart.context"
+import { addItemToCart } from "../../store/cart/cart.action"
+import { selectCartItems } from "../../store/cart/cart.selector"
 
 import Button from "../Button/Button.component"
 import ProductModal from "./ProductModal/ProductModal.component"
@@ -20,9 +22,10 @@ const ProductCard = ({ product }) => {
     price
   } = product
 
-  const { addItemToCart } = useContext(CartContext)
+  const dispatch = useDispatch()
+  const cartItems = useSelector(selectCartItems)
 
-  const addProductToCart = () => addItemToCart(product)
+  const addProductToCart = () => dispatch(addItemToCart(cartItems, product))
 
   const formattedPrice = `£${price.toFixed(2)}`
 

@@ -1,10 +1,11 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
+import { useSelector } from "react-redux"
 
 import { Link } from "react-router-dom"
 
-import { CartContext } from "../../../contexts/cart.context"
-
 import useScreenWidth from "../../../hook/useScreenWidth"
+
+import { selectIsCartOpen } from "../../../store/cart/cart.selector"
 
 import CartDropdown from "../CartDropdown/CartDropdown.component"
 import CartIcon from "../CartIcon/CartIcon.component"
@@ -17,7 +18,7 @@ import "./Menu.styles.scss"
 
 const Menu = () => {
   const isDesktop = useScreenWidth(992)
-  const { isCartOpen } = useContext(CartContext)
+  const isCartOpen = useSelector(selectIsCartOpen)
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showModal, setShowModal] = useState(false)
 

@@ -1,7 +1,11 @@
-import React, { useContext } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
-import { CartContext } from "../../contexts/cart.context"
+import {
+  selectCartItems,
+  selectCartTotal
+} from "../../store/cart/cart.selector"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import CheckoutProduct from "./CheckoutProduct/CheckoutProduct.component"
@@ -12,7 +16,8 @@ import emptyBasket from "../../assets/images/basket-icon.png"
 import "./Checkout.styles.scss"
 
 const Checkout = () => {
-  const { cartItems, cartTotal } = useContext(CartContext)
+  const cartItems = useSelector(selectCartItems)
+  const cartTotal = useSelector(selectCartTotal)
 
   const formattedPrice = `£${cartTotal.toFixed(2)}`
 

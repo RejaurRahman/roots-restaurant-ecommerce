@@ -1,6 +1,11 @@
-import React, { useContext } from "react"
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
 
-import { CartContext } from "../../../contexts/cart.context"
+import {
+  selectCartCount,
+  selectIsCartOpen
+} from "../../../store/cart/cart.reducer"
+import { setIsCartOpen } from "../../../store/cart/cart.action"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons"
@@ -13,13 +18,11 @@ library.add(
 )
 
 const CartIcon = ({ cartDisplay }) => {
-  const {
-    cartCount,
-    isCartOpen,
-    setIsCartOpen
-  } = useContext(CartContext)
+  const dispatch = useDispatch()
+  const isCartOpen = useSelector(selectIsCartOpen)
+  const cartCount = useSelector(selectCartCount)
 
-  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
+  const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen))
 
   return (
     <div className="col-6 col-lg-1 navbar-right">

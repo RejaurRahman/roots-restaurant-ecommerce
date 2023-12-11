@@ -1,4 +1,5 @@
-import React, { useContext } from "react"
+import React from "react"
+import { useSelector } from "react-redux"
 
 import { Link, useLocation } from "react-router-dom"
 
@@ -8,13 +9,13 @@ import data from "../../../data/page-content.json"
 
 import useScreenWidth from "../../../hook/useScreenWidth"
 
-import { UserContext } from "../../../contexts/user.context"
+import { selectCurrentUser } from "../../../store/user/user.selector"
 
 import "./MenuList.styles.scss"
 
 const MenuList = ({ showModal }) => {
   const isDesktop = useScreenWidth(992)
-  const { currentUser } = useContext(UserContext)
+  const currentUser = useSelector(selectCurrentUser)
   const location = useLocation()
 
   const isActive = (to) => {
