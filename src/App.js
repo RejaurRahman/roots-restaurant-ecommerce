@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 
-import { setCurrentUser } from "./store/user/user.action"
+import { checkUserSession } from "./store/user/user.action"
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
@@ -30,7 +30,7 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    getCurrentUser().then((user) => console.log(user))
+    dispatch(checkUserSession())
   })
 
   return (
