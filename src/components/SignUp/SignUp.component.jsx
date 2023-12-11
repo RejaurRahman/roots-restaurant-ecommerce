@@ -1,11 +1,11 @@
 import React, { useState } from "react"
+import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
 import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-  signInWithGooglePopup
-} from "../../utils/firebase/firebase.utils"
+  googleSignInStart,
+  signUpStart
+} from "../../store/user/user.action"
 
 import FormInput from "../FormInput/FormInput.component"
 import Button from "../Button/Button.component"
@@ -28,6 +28,7 @@ const SignUp = ({ toggleComponent }) => {
     password,
     confirmPassword
   } = formFields
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const homeRoute = () => {
@@ -39,7 +40,7 @@ const SignUp = ({ toggleComponent }) => {
   }
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup()
+    dispatch(googleSignInStart())
 
     homeRoute()
   }
@@ -53,12 +54,7 @@ const SignUp = ({ toggleComponent }) => {
     }
 
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(
-        email,
-        password
-      )
-
-      await createUserDocumentFromAuth(user, { displayName })
+      dispatch(signUpStart(email, password, displayName))
 
       resetFormFields()
 

@@ -3,11 +3,6 @@ import { useDispatch } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 
 import { checkUserSession } from "./store/user/user.action"
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-  getCurrentUser
-} from "./utils/firebase/firebase.utils"
 
 import About from "./routes/About/About.component"
 import Authentication from "./routes/Authentication/Authentication.component"
