@@ -7,7 +7,7 @@ import PageBanner from "../../components/PageBanner/PageBanner.component"
 import Category from "../../components/Category/Category.component"
 import CategoriesPreview from "../CategoriesPreview/CategoriesPreview.component"
 
-import { fetchCategoriesStartAsync } from "../../store/categories/category.action"
+import { fetchCategoriesStart } from "../../store/categories/category.action"
 
 import "./Shop.styles.scss"
 
@@ -15,7 +15,7 @@ const Shop = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchCategoriesStartAsync())
+    dispatch(fetchCategoriesStart())
   })
 
   return (
