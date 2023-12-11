@@ -1,7 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Outlet } from "react-router-dom"
+import { useSelector } from "react-redux"
 
-import { UserContext } from "../../contexts/user.context"
+import { selectCurrentUser } from "../../store/user/user.selector"
 
 import Menu from "./Menu/Menu.component"
 import SocialList from "./SocialList/SocialList.component"
@@ -9,7 +10,7 @@ import SocialList from "./SocialList/SocialList.component"
 import "./Navigation.styles.scss"
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext)
+  const currentUser = useSelector(selectCurrentUser)
 
   return (
     <>
