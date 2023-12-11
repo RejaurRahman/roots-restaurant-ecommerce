@@ -7,8 +7,7 @@ import PageBanner from "../../components/PageBanner/PageBanner.component"
 import Category from "../../components/Category/Category.component"
 import CategoriesPreview from "../CategoriesPreview/CategoriesPreview.component"
 
-import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils"
-import { setCategories } from "../../store/categories/category.action"
+import { fetchCategoriesStartAsync } from "../../store/categories/category.action"
 
 import "./Shop.styles.scss"
 
@@ -16,12 +15,7 @@ const Shop = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoryArray = await getCategoriesAndDocuments("categories")
-      dispatch(setCategories(categoryArray))
-    }
-
-    getCategoriesMap()
+    dispatch(fetchCategoriesStartAsync())
   })
 
   return (
