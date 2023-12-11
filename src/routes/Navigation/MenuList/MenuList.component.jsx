@@ -1,9 +1,12 @@
 import React from "react"
-import { useSelector } from "react-redux"
+import {
+  useDispatch,
+  useSelector
+} from "react-redux"
 
 import { Link, useLocation } from "react-router-dom"
 
-import { signOutUser } from "../../../utils/firebase/firebase.utils"
+import { signOutStart } from "../../../store/user/user.action"
 
 import data from "../../../data/page-content.json"
 
@@ -14,9 +17,12 @@ import { selectCurrentUser } from "../../../store/user/user.selector"
 import "./MenuList.styles.scss"
 
 const MenuList = ({ showModal }) => {
+  const dispatch = useDispatch()
   const isDesktop = useScreenWidth(992)
   const currentUser = useSelector(selectCurrentUser)
   const location = useLocation()
+
+  const signOutUser = () => dispatch(signOutStart())
 
   const isActive = (to) => {
     if (to === "/") {

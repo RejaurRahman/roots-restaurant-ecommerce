@@ -11,6 +11,9 @@ import {
 import {
   signInFailed,
   signInSuccess,
+  signUpFailed,
+  signOutFailed,
+  signOutSuccess,
   signUpSuccess
 } from "./user.action"
 
@@ -19,7 +22,8 @@ import {
   createUserDocumentFromAuth,
   getCurrentUser,
   signInWithGooglePopup,
-  signInAuthUserWithEmailAndPassword
+  signInAuthUserWithEmailAndPassword,
+  signOutUser
 } from "../../utils/firebase/firebase.utils"
 
 export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
@@ -89,6 +93,15 @@ export function* signUp({
   }
 }
 
+export function* signOut() {
+  try {
+  yield call(signOutUser)
+    yield put(signOutSuccess())
+  } catch (error) {
+    yield put(signOutFailed(error))
+  }
+}
+
 export function* signInAfterSignUp({
   payload: { user, additionalDetails }
 }) {
@@ -115,11 +128,16 @@ export function* onSignUpSuccess() {
   yield takeLatest(USER_ACTION_TYPES.SIGN_IN_SUCCESS, signInAfterSignUp)
 }
 
+export function* onSignOutStart() {
+  yield takeLatest(USER_ACTION_TYPES.SIGN_OUT_START, signOut)
+}
+
 export function* userSagas() {
   yield all([
     call(onCheckUserSession),
     call(onEmailSignInStart),
     call(onGoogleSignInStart),
+    call(onSignOutStart),
     call(onSignUpStart),
     call(onSignUpSuccess)
   ])
