@@ -17,8 +17,8 @@ export const CART_INITIAL_STATE: CartState = {
 }
 
 export const cartReducer = (
-  action = {} as AnyAction,
-  state = CART_INITIAL_STATE
+  state = CART_INITIAL_STATE,
+  action = {} as AnyAction
 ) => {
   if (setIsCartOpen.match(action)) {
     return {

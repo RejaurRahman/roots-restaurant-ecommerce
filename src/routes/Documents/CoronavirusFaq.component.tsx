@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
 import Accordion from "../../components/Accordion/Accordion.component"
 import AccordionItem from "../../components/Accordion/AccordionItem/AccordionItem.component"

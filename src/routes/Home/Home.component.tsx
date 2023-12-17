@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
 import Directory from "../../components/Directory/Directory.component"
 import MainBanner from "../../components/MainBanner/MainBanner.component"

@@ -5,9 +5,13 @@ export enum CATEGORIES_ACTION_TYPES {
 }
 
 export type CategoryItem = {
+  calories: number
+  diet: string[]
   id: number
   imageUrl: string
+  ingredients: string[]
   name: string
+  notes: string;
   price: number
 }
 

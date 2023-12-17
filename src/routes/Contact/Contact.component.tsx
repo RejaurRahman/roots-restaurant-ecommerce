@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
 import Boxout from "../../components/Boxout/Boxout.component"
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"

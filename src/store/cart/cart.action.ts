@@ -11,7 +11,7 @@ import {
 import { CategoryItem } from "../categories/category.types"
 
 const addCartItem = (
-  cartItems: CartItem[],
+  cartItems: CartItem[] = [],
   productToAdd: CategoryItem
 ): CartItem[] => {
   const existingCartItem = cartItems.find(
@@ -74,7 +74,7 @@ export const addItemToCart = (
   cartItems: CartItem[],
   productToAdd: CategoryItem
 ) => {
-  const newCartItems = addCartItem(cartItems, productToAdd)
+  const newCartItems = addCartItem(cartItems || [], productToAdd)
 
   return setCartItems(newCartItems)
 }

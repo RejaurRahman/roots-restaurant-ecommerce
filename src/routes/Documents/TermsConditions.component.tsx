@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"

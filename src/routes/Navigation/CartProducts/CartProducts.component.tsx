@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import "./CartProducts.styles.scss"
