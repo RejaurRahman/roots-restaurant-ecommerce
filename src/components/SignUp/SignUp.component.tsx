@@ -1,6 +1,16 @@
-import React, { useState } from "react"
+import {
+  ChangeEvent,
+  FC,
+  FormEvent,
+  useCallback,
+  useState
+} from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import {
+  AuthError,
+  AuthErrorCodes
+} from "firebase/auth"
 
 import {
   googleSignInStart,
@@ -8,18 +18,22 @@ import {
 } from "../../store/user/user.action"
 
 import FormInput from "../FormInput/FormInput.component"
-import Button from "../Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button.component"
 
 import "./SignUp.styles.scss"
 
 const defaultFormFields = {
+  confirmPassword: "",
   displayName: "",
   email: "",
-  password: "",
-  confirmPassword: ""
+  password: ""
 }
 
-const SignUp = ({ toggleComponent }) => {
+interface SignUpProps {
+  toggleComponent: () => void
+}
+
+const SignUp: FC<SignUpProps> = ({ toggleComponent }) => {
   const [formFields, setFormFields] = useState
   (defaultFormFields)
   const {
@@ -31,9 +45,9 @@ const SignUp = ({ toggleComponent }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const homeRoute = () => {
+  const homeRoute = useCallback(() => {
     navigate("/")
-  }
+  }, [navigate])
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
@@ -41,11 +55,9 @@ const SignUp = ({ toggleComponent }) => {
 
   const signInWithGoogle = async () => {
     dispatch(googleSignInStart())
-
-    homeRoute()
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     if (password !== confirmPassword) {
@@ -60,7 +72,7 @@ const SignUp = ({ toggleComponent }) => {
 
       homeRoute()
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
+      if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
         alert("Cannot create user, email already in use")
       } else {
         console.log("user creation encountered an error", error)
@@ -68,7 +80,7 @@ const SignUp = ({ toggleComponent }) => {
     }
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
 
     setFormFields({ ...formFields, [name]: value })
@@ -84,7 +96,7 @@ const SignUp = ({ toggleComponent }) => {
       >
         <div className="social-login">
           <Button
-            buttonClassType="google"
+            buttonClassType={BUTTON_TYPE_CLASSES.google}
             type="button"
             onClick={signInWithGoogle}
           >
@@ -132,14 +144,14 @@ const SignUp = ({ toggleComponent }) => {
         />
 
         <Button
-          buttonClassType="secondary"
+          buttonClassType={BUTTON_TYPE_CLASSES.secondary}
           type="submit"
         >
           Sign Up
         </Button>
       </form>
       <Button
-        buttonClassType="inverted"
+        buttonClassType={BUTTON_TYPE_CLASSES.inverted}
         onClick={toggleComponent}
       >
         Have an account? Log In

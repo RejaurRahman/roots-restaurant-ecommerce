@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import { FC, useRef } from "react"
 
 import { Autoplay, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import type SwiperCore from "swiper"
 
 import data from "../../data/page-content.json"
 import ImageBanner1 from "../../assets/images/home/home-slide-1.jpg"
@@ -13,8 +14,8 @@ import "swiper/css"
 
 import "./MainBanner.styles.scss"
 
-const MainBanner = () => {
-  const swiperRef = useRef(null)
+const MainBanner: FC = () => {
+  const swiperRef = useRef<SwiperCore>()
   const imageBanners = [
     ImageBanner1,
     ImageBanner2,

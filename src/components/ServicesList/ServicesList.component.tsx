@@ -1,4 +1,4 @@
-import React from "react"
+import { FC } from "react"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBoxArchive, faRibbon, faTruck, faUserClock } from "@fortawesome/free-solid-svg-icons"
@@ -15,7 +15,7 @@ library.add(
   faUserClock
 )
 
-const ServicesList = () => {
+const ServicesList: FC = () => {
   return (
     <div className="home-services">
       <div className="container">
@@ -30,7 +30,7 @@ const ServicesList = () => {
                 style={{backgroundColor: list.colour}}
               >
                 <FontAwesomeIcon
-                  icon={["fas", `${list.iconName}`]}
+                  icon={["fas", "list"]}
                   size="2x"
                 />
               </div>

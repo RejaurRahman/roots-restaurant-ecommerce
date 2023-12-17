@@ -1,11 +1,19 @@
-import React from "react"
+import { FC } from "react"
+
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
-import Button from "../Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button.component"
 
 import "./DirectoryItem.styles.scss"
 
-const DirectoryItem = ({ category }) => {
+interface DirectoryItemProps {
+  category: {
+    imageUrl: string
+    title: string
+  }
+}
+
+const DirectoryItem: FC<DirectoryItemProps> = ({ category }) => {
   const { imageUrl, title } = category
 
   return (
@@ -18,11 +26,9 @@ const DirectoryItem = ({ category }) => {
         width={351}
       />
       <div className="directory-body-container">
-        <h2>
-          {title}
-        </h2>
+        <h2>{title}</h2>
         <Button
-          buttonClassType="transparent"
+          buttonClassType={BUTTON_TYPE_CLASSES.transparent}
           buttonType="anchor"
           linkRoute={`/shop/${title}`.toLowerCase()}
         >

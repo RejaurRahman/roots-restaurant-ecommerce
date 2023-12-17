@@ -1,7 +1,12 @@
-import React, { useState } from "react"
+import {
+  ChangeEvent,
+  FC,
+  FormEvent,
+  useState
+} from "react"
 
 import FormInput from "../FormInput/FormInput.component"
-import Button from "../Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button.component"
 
 import "./ContactForm.styles.scss"
 
@@ -11,15 +16,21 @@ const defaultFormFields = {
   textMessage: ""
 }
 
-const ContactForm = () => {
+interface Message {
+  type: string
+  content: string
+}
+
+const ContactForm: FC = () => {
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { name, email, textMessage } = formFields
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState<Message | null>(null)
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const input = event.target.elements.email
+    const input = (event.target as HTMLFormElement).elements.namedItem("email") as HTMLInputElement
+
     const email = input.value.trim()
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -32,7 +43,7 @@ const ContactForm = () => {
     }
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
 
     setFormFields({ ...formFields, [name]: value })
@@ -45,6 +56,7 @@ const ContactForm = () => {
           {message.content}
         </div>
       )}
+
       {message?.type !== "success" && (
         <>
           <h2 className="form-heading">Leave Message</h2>
@@ -78,7 +90,7 @@ const ContactForm = () => {
             />
 
             <Button
-              buttonClassType="primary"
+              buttonClassType={BUTTON_TYPE_CLASSES.primary}
               type="submit"
             >
               Send Message

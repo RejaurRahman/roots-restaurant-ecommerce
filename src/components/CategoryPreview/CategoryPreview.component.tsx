@@ -1,9 +1,11 @@
-import React from "react"
+import { FC } from "react"
 import { Link } from "react-router-dom"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import { CategoryItem } from "../../store/categories/category.types"
 
 import ProductCard from "../ProductCard/ProductCard.component"
 
@@ -13,7 +15,12 @@ library.add(
   faChevronRight
 )
 
-const CategoryPreview = ({ title, products }) => {
+interface CategoryPreviewProps {
+  title: string
+  products: CategoryItem[]
+}
+
+const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   if (!products || !Array.isArray(products)) {
     return null
   }
@@ -30,7 +37,7 @@ const CategoryPreview = ({ title, products }) => {
         >
           View Category
           <FontAwesomeIcon
-            icon={["fas", "fa-chevron-right"]}
+            icon={faChevronRight}
           />
         </Link>
       </div>

@@ -1,21 +1,28 @@
-import React from "react"
+import { FC } from "react"
+
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import data from "../../data/page-content.json"
 
 import "./TextMedia.styles.scss"
 
-const imagePaths = [
+const imagePaths: string[] = [
   require("../../assets/images/about/bottles.png"),
   require("../../assets/images/about/flavours.png"),
   require("../../assets/images/about/egg.png")
 ]
 
-const TextMedia = () => {
+interface TextMediaItem {
+  content: string
+  heading: string
+  reverseLayout?: boolean
+}
+
+const TextMedia: FC = () => {
   return (
     <div className="text-media">
       <div className="container">
-        {data.text_medias.map((text_media, index) => {
+        {data.text_medias.map((text_media: TextMediaItem, index: number) => {
           const imagePath = imagePaths[index % imagePaths.length]
 
           return (
@@ -30,10 +37,10 @@ const TextMedia = () => {
 
               <div className="col-12 col-lg-6 text-media-image">
                 <LazyLoadImage
-                  src={imagePath}
                   alt={`${text_media.heading} image`}
-                  width={460}
+                  src={imagePath}
                   height={365}
+                  width={460}
                 />
               </div>
             </div>

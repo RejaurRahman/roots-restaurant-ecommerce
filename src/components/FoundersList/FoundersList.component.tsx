@@ -1,16 +1,17 @@
-import React from "react"
+import { FC } from "react"
+
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import data from "../../data/page-content.json"
 
 import "./FoundersList.styles.scss"
 
-const imagePaths = [
+const imagePaths: string[] = [
   require("../../assets/images/about/danielle-sanchez.png"),
   require("../../assets/images/about/nicole-gabbiadini.png")
 ]
 
-const FoundersList = () => {
+const FoundersList: FC = () => {
   return (
     <div className="container founders">
       <h2 className="founders-main-heading">

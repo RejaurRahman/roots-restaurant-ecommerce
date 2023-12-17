@@ -1,29 +1,43 @@
-import React, { useState } from "react"
+import {
+  ChangeEvent,
+  FC,
+  FormEvent,
+  useState
+} from "react"
 
-import Button from "../../Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../../Button/Button.component"
 import FormInput from "../../FormInput/FormInput.component"
 
 import "./FooterForm.styles.scss"
 
-const defaultFormFields = {
+interface Message {
+  content: string
+  type: string
+}
+
+interface FormFields {
+  email: string
+}
+
+const defaultFormFields: FormFields = {
   email: ""
 }
 
-const FooterForm = () => {
-  const [message, setMessage] = useState(null)
-  const [formFields, setFormFields] = useState(defaultFormFields)
+const FooterForm: FC = () => {
+  const [message, setMessage] = useState<Message | null>(null)
+  const [formFields, setFormFields] = useState<FormFields>(defaultFormFields)
   const { email } = formFields
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
 
     setFormFields({ ...formFields, [name]: value })
   }
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const input = event.target.elements.email
+    const input = (event.target as HTMLFormElement).elements.namedItem("email") as HTMLInputElement
     const email = input.value.trim()
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -57,7 +71,7 @@ const FooterForm = () => {
             value={email}
           />
           <Button
-            buttonClassType="inline"
+            buttonClassType={BUTTON_TYPE_CLASSES.inline}
             type="submit"
           >
             Subscribe

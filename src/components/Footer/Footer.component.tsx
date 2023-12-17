@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Link, useLocation } from "react-router-dom"
 
@@ -20,7 +20,7 @@ library.add(
   fab
 )
 
-const Footer = () => {
+const Footer: FC = () => {
   const currentYear = new Date().getFullYear()
   const location = useLocation()
 
@@ -35,7 +35,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-backtop" onClick={handleScrollToTop}>
         <FontAwesomeIcon
-          icon={["fas", "fa-angle-up"]}
+          icon={faAngleUp}
           size="2x"
         />
       </div>
@@ -131,9 +131,7 @@ const Footer = () => {
                   target="_blank"
                   to="https://en-gb.facebook.com/"
                 >
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-facebook-f"]}
-                  />
+                  FB
                 </Link>
               </li>
               <li className="footer-social-list">
@@ -143,9 +141,7 @@ const Footer = () => {
                   target="_blank"
                   to="https://twitter.com/"
                 >
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-twitter"]}
-                  />
+                  TW
                 </Link>
               </li>
               <li className="footer-social-list">
@@ -155,9 +151,7 @@ const Footer = () => {
                   target="_blank"
                   to="https://www.instagram.com/"
                 >
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-instagram"]}
-                  />
+                  IG
                 </Link>
               </li>
             </ul>
@@ -173,28 +167,16 @@ const Footer = () => {
             <div className="col-12 col-lg-6">
               <ul className="footer-payment">
                 <li className="footer-payment-list">
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-cc-visa"]}
-                    size="2x"
-                  />
+                  VI
                 </li>
                 <li className="footer-payment-list">
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-cc-mastercard"]}
-                    size="2x"
-                  />
+                  MC
                 </li>
                 <li className="footer-payment-list">
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-cc-paypal"]}
-                    size="2x"
-                  />
+                  PP
                 </li>
                 <li className="footer-payment-list">
-                  <FontAwesomeIcon
-                    icon={["fab", "fa-cc-amex"]}
-                    size="2x"
-                  />
+                  AM
                 </li>
               </ul>
             </div>

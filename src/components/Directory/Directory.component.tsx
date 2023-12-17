@@ -1,6 +1,8 @@
-import React, { useRef } from "react"
+import { FC, useRef } from "react"
+
 import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
+import type SwiperCore from "swiper"
 
 import useScreenWidth from "../../hook/useScreenWidth"
 
@@ -15,13 +17,15 @@ import "swiper/css"
 
 import "./Directory.styles.scss"
 
-library.add(
-  faRightLeft
-)
+library.add(faRightLeft)
 
-const Directory = ({ categories }) => {
+interface DirectoryProps {
+  categories: any[]
+}
+
+const Directory: FC<DirectoryProps> = ({ categories }) => {
   const isDesktop = useScreenWidth(992)
-  const swiperRef = useRef(null)
+  const swiperRef = useRef<SwiperCore>()
 
   const swiperOptions = {
     breakpoints: {
@@ -29,12 +33,12 @@ const Directory = ({ categories }) => {
         centeredSlides: true,
         enabled: true,
         slidesPerView: 1.15,
-        spaceBetween: 30
+        spaceBetween: 30,
       },
       992: {
-        enabled: false
-      }
-    }
+        enabled: false,
+      },
+    },
   }
 
   return (
@@ -65,19 +69,13 @@ const Directory = ({ categories }) => {
             tabIndex={0}
           >
             Scroll
-            <FontAwesomeIcon icon={["fas", "fa-right-left"]} />
+            <FontAwesomeIcon icon={faRightLeft} />
           </div>
         </div>
       )}
       {categories.map((category, index) => (
-        <SwiperSlide
-          className="directory-item"
-          key={index}
-        >
-          <DirectoryItem
-            key={category.id}
-            category={category}
-          />
+        <SwiperSlide className="directory-item" key={index}>
+          <DirectoryItem key={category.id} category={category} />
         </SwiperSlide>
       ))}
     </Swiper>

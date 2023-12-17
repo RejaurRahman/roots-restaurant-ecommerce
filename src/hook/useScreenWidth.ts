@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
-const useScreenWidth = (minWidth) => {
-  const [matches, setMatches] = useState(false)
+const useScreenWidth = (minWidth: number) => {
+  const [matches, setMatches] = useState<boolean>(false)
 
   useEffect(() => {
     const handleResize = () => {

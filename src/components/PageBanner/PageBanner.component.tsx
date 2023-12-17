@@ -1,16 +1,22 @@
-import React from "react"
+import { FC } from "react"
 
 import BannerBg from "../../assets/images/shared/banner.jpg"
 
 import "./PageBanner.styles.scss"
 
-const PageBanner = ({ label }) => {
+interface PageBannerProps {
+  label: string
+}
+
+const PageBanner: FC<PageBannerProps> = ({
+  label
+}) => {
   return (
     <div className="banner page-banner">
       <img
-        src={BannerBg}
         alt="Vegetable Banner"
         className="banner-image"
+        src={BannerBg}
       />
       <div className="banner-overlay" />
       <div className="container">

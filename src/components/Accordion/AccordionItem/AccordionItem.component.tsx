@@ -1,4 +1,8 @@
-import React, { useState } from "react"
+import {
+  FC,
+  ReactNode,
+  useState
+ } from "react"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
@@ -6,22 +10,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import "./AccordionItem.styles.scss"
 
-library.add(
-  faChevronDown
-)
+library.add(faChevronDown)
 
-const AccordionItem = ({
+interface AccordionItemProps {
+  buttonClassName?: string
+  contentClassName?: string
+  children: ReactNode
+  index: number
+  isList: boolean
+  title: string
+}
+
+const AccordionItem: FC<AccordionItemProps> = ({
   buttonClassName,
   contentClassName,
   children,
   index,
   isList,
-  title,
+  title
 }) => {
-  const [activeIndex, setActiveIndex] = useState(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
-  const handleItemClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index)
+  const handleItemClick = (currentIndex: number) => {
+    setActiveIndex((prevIndex) => (prevIndex === currentIndex ? null : currentIndex))
   }
 
   const contentElement = isList ? (
@@ -39,14 +50,16 @@ const AccordionItem = ({
   )
 
   return (
-    <div className={`accordion-group ${activeIndex === index ? "open" : ""}`.trim()}>
+    <div
+      className={`accordion-group ${activeIndex === index ? "open" : ""}`.trim()}
+    >
       <button
         className={`accordion-button ${buttonClassName}`}
         onClick={() => handleItemClick(index)}
       >
         {title}
         <FontAwesomeIcon
-          icon={["fas", "fa-chevron-down"]}
+          icon={faChevronDown}
         />
       </button>
       {contentElement}

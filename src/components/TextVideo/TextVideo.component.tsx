@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { FC, useEffect, useRef, useState } from "react"
 
 import { createPortal } from "react-dom"
 
@@ -23,9 +23,9 @@ library.add(
   faPlay
 )
 
-const TextVideo = () => {
+const TextVideo: FC = () => {
   const [showModal, setShowModal] = useState(false)
-  const videoModalRef = useRef(null)
+  const videoModalRef = useRef<HTMLDivElement | null>(null)
   const isDesktop = useScreenWidth(992)
 
   const handleClick = () => {
@@ -73,24 +73,24 @@ const TextVideo = () => {
             data-bs-target={videoModalRef}
             onClick={handleClick}
           >
-            <FontAwesomeIcon icon={["fas", "fa-play"]} />
+            <FontAwesomeIcon icon={faPlay} />
           </button>
 
           {showModal && createPortal(
             <div
               className={`modal fade video-modal ${showModal ? "show" : ""}`.trim()}
               ref={videoModalRef}
-              tabindex="-1"
+              tabIndex={-1}
               aria-labelledby="aboutVideolLabel"
               aria-hidden={showModal}
             >
               <div className="modal-dialog">
                 <video
                   className="modal-video"
-                  controls="controls"
-                  autoplay="false"
-                  loop="false"
-                  muted
+                  controls={true}
+                  autoPlay={false}
+                  loop={false}
+                  muted={true}
                   poster={aboutVideoImg}
                 >
                   <source
@@ -104,7 +104,7 @@ const TextVideo = () => {
                 onClick={handleClose}
               />
             </div>,
-            document.getElementById("modal-root")
+            document.getElementById("modal-root")!
           )}
         </div>
 

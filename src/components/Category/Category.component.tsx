@@ -1,4 +1,5 @@
-import React, {
+import {
+  FC,
   useEffect,
   useState
 } from "react"
@@ -10,13 +11,19 @@ import {
   selectCategoriesMap
 } from "../../store/categories/category.selector"
 
-import ProductCard from "../../components/ProductCard/ProductCard.component"
-import Spinner from "../../components/Spinner/Spinner.component"
+import ProductCard from "../ProductCard/ProductCard.component"
+import Spinner from "../Spinner/Spinner.component"
 
 import "./Category.styles.scss"
 
-const Category = () => {
-  const { category } = useParams()
+interface CategoryParams {
+  category: string
+}
+
+const Category: FC = () => {
+  const { category } = useParams<
+    keyof CategoryParams
+  >() as CategoryParams
   const categoriesMap = useSelector(selectCategoriesMap)
   const isLoading = useSelector(selectCategoriesIsLoading)
   const [products, setProducts] = useState(categoriesMap[category])

@@ -1,4 +1,4 @@
-import React from "react"
+import { FC } from "react"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faPhone, faLocationDot, faClockRotateLeft, faAt } from "@fortawesome/free-solid-svg-icons"
@@ -15,7 +15,7 @@ library.add(
   faAt
 )
 
-const Boxout = () => {
+const Boxout: FC = () => {
   return (
     <div className="container boxout-container">
       <div className="row">
@@ -23,7 +23,7 @@ const Boxout = () => {
           <div className="boxout-column">
             <span className="boxout-icon">
               <FontAwesomeIcon
-                icon={["fas", "fa-phone"]}
+                icon={faPhone}
                 size="2x"
               />
             </span>
@@ -35,7 +35,7 @@ const Boxout = () => {
           <div className="boxout-column">
             <span className="boxout-icon">
               <FontAwesomeIcon
-                icon={["fas", "fa-location-dot"]}
+                icon={faLocationDot}
                 size="2x"
               />
             </span>
@@ -60,7 +60,7 @@ const Boxout = () => {
           <div className="boxout-column">
             <span className="boxout-icon">
               <FontAwesomeIcon
-                icon={["fas", "fa-clock-rotate-left"]}
+                icon={faClockRotateLeft}
                 size="2x"
               />
             </span>
@@ -74,7 +74,7 @@ const Boxout = () => {
           <div className="boxout-column">
             <span className="boxout-icon">
               <FontAwesomeIcon
-                icon={["fas", "fa-at"]}
+                icon={faAt}
                 size="2x"
               />
             </span>

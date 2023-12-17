@@ -1,16 +1,21 @@
-import React, { useState } from "react"
+import React, { FC, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 
 import { addItemToCart } from "../../store/cart/cart.action"
 import { selectCartItems } from "../../store/cart/cart.selector"
+import { CategoryItem } from "../../store/categories/category.types"
 
-import Button from "../Button/Button.component"
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button.component"
 import ProductModal from "./ProductModal/ProductModal.component"
 
 import "./ProductCard.styles.scss"
 
-const ProductCard = ({ product }) => {
+interface ProductCardProps {
+  product: CategoryItem
+}
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const [showModal, setShowModal] = useState(false)
   const {
     calories,
@@ -97,7 +102,7 @@ const ProductCard = ({ product }) => {
           </span>
         </span>
         <Button
-          buttonClassType="inverted"
+          buttonClassType={BUTTON_TYPE_CLASSES.inverted}
           onClick={addProductToCart}
         >
           Add to Cart

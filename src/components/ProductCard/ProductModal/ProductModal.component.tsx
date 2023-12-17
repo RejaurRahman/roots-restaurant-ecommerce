@@ -1,9 +1,15 @@
-import React from "react"
+import { FC } from "react"
 import { createPortal } from "react-dom"
 
 import "./ProductModal.styles.scss"
 
-const ProductModal = ({
+interface ProductModalProps {
+  closeModal: () => void
+  ingredients: string[]
+  showModal: boolean
+}
+
+const ProductModal: FC<ProductModalProps> = ({
   closeModal,
   ingredients,
   showModal
@@ -15,7 +21,7 @@ const ProductModal = ({
         aria-labelledby="navigationModalLabel"
         className={`modal fade product-modal ${showModal ? "show" : ""}`.trim()}
         onClick={closeModal}
-        tabIndex="-1"
+        tabIndex={-1}
       >
         <div className="modal-overlay" />
         <div className="modal-dialog">
@@ -34,7 +40,7 @@ const ProductModal = ({
           </div>
         </div>
       </div>,
-      document.getElementById("modal-root")
+      document.getElementById("modal-root")!
     )
   )
 }

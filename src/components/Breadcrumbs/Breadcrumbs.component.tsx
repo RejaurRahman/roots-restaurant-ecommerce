@@ -1,9 +1,14 @@
-import React from "react"
+import { FC } from "react"
+
 import { Link } from "react-router-dom"
 
 import "./Breadcrumbs.styles.scss"
 
-const Breadcrumbs = ({
+interface BreadcrumbsProps {
+  label: string
+}
+
+const Breadcrumbs: FC<BreadcrumbsProps> = ({
   label
 }) => {
   return (
@@ -16,8 +21,8 @@ const Breadcrumbs = ({
                 <Link to="/">Home</Link>
               </li>
               <li
-                className="breadcrumb-item active"
                 aria-current="page"
+                className="breadcrumb-item active"
               >
                 {label}
               </li>
