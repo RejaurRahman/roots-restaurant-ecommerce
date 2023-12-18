@@ -81,8 +81,8 @@ const PaymentForm: FC = () => {
         className="payment-form"
         onSubmit={paymentHandler}
       >
-        <h2>Payment Details:</h2>
-        <CardElement />
+        <h2 className="payment-form-heading">Payment Details</h2>
+        <CardElement className="payment-form-card" />
         <Button
           buttonClassType={BUTTON_TYPE_CLASSES.inverted}
           isLoading={isProcessingPayment}

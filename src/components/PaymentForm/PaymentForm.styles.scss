@@ -1,12 +1,27 @@
 .payment-form-container {
-  height: 300px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
 }
 
 .payment-form {
-  height: 100px;
   min-width: 500px;
+}
+
+.payment-form-heading {
+  color: #088972;
+  margin-bottom: 30px;
+}
+
+.payment-form-card {
+  border: 1px solid #088972;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: {
+    top: 15px;
+    right: 10px;
+    bottom: 15px;
+    left: 10px;
+  }
 }
