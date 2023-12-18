@@ -131,7 +131,9 @@ const Footer: FC = () => {
                   target="_blank"
                   to="https://en-gb.facebook.com/"
                 >
-                  FB
+                  <FontAwesomeIcon
+                    icon={["fab", "facebook-f"]}
+                  />
                 </Link>
               </li>
               <li className="footer-social-list">
@@ -141,7 +143,9 @@ const Footer: FC = () => {
                   target="_blank"
                   to="https://twitter.com/"
                 >
-                  TW
+                  <FontAwesomeIcon
+                    icon={["fab", "twitter"]}
+                  />
                 </Link>
               </li>
               <li className="footer-social-list">
@@ -151,7 +155,9 @@ const Footer: FC = () => {
                   target="_blank"
                   to="https://www.instagram.com/"
                 >
-                  IG
+                  <FontAwesomeIcon
+                    icon={["fab", "instagram"]}
+                  />
                 </Link>
               </li>
             </ul>
@@ -167,16 +173,28 @@ const Footer: FC = () => {
             <div className="col-12 col-lg-6">
               <ul className="footer-payment">
                 <li className="footer-payment-list">
-                  VI
+                  <FontAwesomeIcon
+                    icon={["fab", "cc-visa"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer-payment-list">
-                  MC
+                  <FontAwesomeIcon
+                    icon={["fab", "cc-mastercard"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer-payment-list">
-                  PP
+                  <FontAwesomeIcon
+                    icon={["fab", "cc-paypal"]}
+                    size="2x"
+                  />
                 </li>
                 <li className="footer-payment-list">
-                  AM
+                  <FontAwesomeIcon
+                    icon={["fab", "cc-amex"]}
+                    size="2x"
+                  />
                 </li>
               </ul>
             </div>

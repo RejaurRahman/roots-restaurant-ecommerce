@@ -49,25 +49,25 @@
     {
       "colour": "#7D1B7E",
       "heading": "Free Shipping",
-      "iconName": "fa-truck",
+      "iconName": "truck",
       "text": "On All Orders"
     },
     {
       "colour": "#C11B17",
       "heading": "Always Fresh",
-      "iconName": "fa-box-archive",
+      "iconName": "box-archive",
       "text": "Product Well Packaged"
     },
     {
       "colour": "#E56717",
       "heading": "Superior Quality",
-      "iconName": "fa-ribbon",
+      "iconName": "ribbon",
       "text": "Quality Food and Drinks"
     },
     {
       "colour": "#FBB917",
       "heading": "Support",
-      "iconName": "fa-user-clock",
+      "iconName": "user-clock",
       "text": "24/7 Available"
     }
   ],

@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
+import { IconDefinition, library } from "@fortawesome/fontawesome-svg-core"
 import { faBoxArchive, faRibbon, faTruck, faUserClock } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -14,6 +14,13 @@ library.add(
   faTruck,
   faUserClock
 )
+
+const iconMap: Record<string, IconDefinition> = {
+  "box-archive": faBoxArchive,
+  "ribbon": faRibbon,
+  "truck": faTruck,
+  "user-clock": faUserClock
+}
 
 const ServicesList: FC = () => {
   return (
@@ -30,7 +37,7 @@ const ServicesList: FC = () => {
                 style={{backgroundColor: list.colour}}
               >
                 <FontAwesomeIcon
-                  icon={["fas", "list"]}
+                  icon={iconMap[list.iconName]}
                   size="2x"
                 />
               </div>

@@ -11,7 +11,7 @@ export type CategoryItem = {
   imageUrl: string
   ingredients: string[]
   name: string
-  notes: string;
+  notes: string
   price: number
 }
 
