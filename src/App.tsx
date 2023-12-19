@@ -12,6 +12,7 @@ import {
 
 import { checkUserSession } from "./store/user/user.action"
 
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute.component"
 import Spinner from "./components/Spinner/Spinner.component"
 
 import "./styles/styles.scss"
@@ -72,7 +73,9 @@ const App: FC = () => {
         <Route path="/" element={<Navigation />}>
           <Route path="about" element={<About />} />
           <Route path="auth" element={<Authentication />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route element={<PrivateRoute/>}>
+            <Route path="checkout" element={<Checkout/>}/>
+          </Route>
           <Route path="contact" element={<Contact />} />
           <Route path="coronavirus-faq" element={<CoronavirusFAQ />} />
           <Route path="faq" element={<FAQ />} />
