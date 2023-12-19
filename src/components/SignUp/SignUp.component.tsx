@@ -3,15 +3,20 @@ import {
   FC,
   FormEvent,
   useCallback,
+  useEffect,
   useState
 } from "react"
-import { useDispatch } from "react-redux"
+import {
+  useDispatch,
+  useSelector
+} from "react-redux"
 import { useNavigate } from "react-router-dom"
 import {
   AuthError,
   AuthErrorCodes
 } from "firebase/auth"
 
+import { RootState } from "../../store/store"
 import {
   googleSignInStart,
   signUpStart
@@ -34,8 +39,8 @@ interface SignUpProps {
 }
 
 const SignUp: FC<SignUpProps> = ({ toggleComponent }) => {
-  const [formFields, setFormFields] = useState
-  (defaultFormFields)
+  const currentUser = useSelector((state: RootState) => state.user.currentUser)
+  const [formFields, setFormFields] = useState(defaultFormFields)
   const {
     displayName,
     email,
@@ -85,6 +90,12 @@ const SignUp: FC<SignUpProps> = ({ toggleComponent }) => {
 
     setFormFields({ ...formFields, [name]: value })
   }
+
+  useEffect(() => {
+    if (currentUser) {
+      homeRoute()
+    }
+  }, [currentUser, homeRoute])
 
   return (
     <div className="col-12 col-md-8 col-lg-5 mx-auto sign-up-container">

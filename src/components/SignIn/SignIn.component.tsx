@@ -3,11 +3,16 @@ import {
   FC,
   FormEvent,
   useCallback,
+  useEffect,
   useState
 } from "react"
-import { useDispatch } from "react-redux"
+import {
+  useDispatch,
+  useSelector
+} from "react-redux"
 import { useNavigate } from "react-router-dom"
 
+import { RootState } from "../../store/store"
 import {
   emailSignInStart,
   googleSignInStart
@@ -28,6 +33,7 @@ interface SignInProps {
 }
 
 const SignIn: FC<SignInProps> = ({ toggleComponent }) => {
+  const currentUser = useSelector((state: RootState) => state.user.currentUser)
   const [formFields, setFormFields] = useState(defaultFormFields)
   const { email, password } = formFields
   const dispatch = useDispatch()
@@ -63,6 +69,12 @@ const SignIn: FC<SignInProps> = ({ toggleComponent }) => {
 
     setFormFields({ ...formFields, [name]: value })
   }
+
+  useEffect(() => {
+    if (currentUser) {
+      homeRoute()
+    }
+  }, [currentUser, homeRoute])
 
   return (
     <div className="col-12 col-md-8 col-lg-5 mx-auto sign-in-container">
