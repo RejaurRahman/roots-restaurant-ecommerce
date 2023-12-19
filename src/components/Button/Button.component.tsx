@@ -6,7 +6,7 @@ import Spinner from "../Spinner/Spinner.component"
 import "./Button.styles.scss"
 
 export enum BUTTON_TYPE_CLASSES {
-  google = "google-sign-in",
+  google = "google",
   inverted = "inverted",
   inline = "inline",
   primary = "primary",

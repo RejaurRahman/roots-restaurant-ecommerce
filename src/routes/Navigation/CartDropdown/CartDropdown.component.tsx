@@ -6,6 +6,7 @@ import {
 
 import { setIsCartOpen } from "../../../store/cart/cart.action"
 import { selectCartItems } from "../../../store/cart/cart.selector"
+import { selectCurrentUser } from "../../../store/user/user.selector"
 
 import Button, { BUTTON_TYPE_CLASSES } from "../../../components/Button/Button.component"
 import CartProducts from "../CartProducts/CartProducts.component"
@@ -15,6 +16,7 @@ import "./CartDropdown.styles.scss"
 const CartDropdown: FC = () => {
   const dispatch = useDispatch()
   const cartItems = useSelector(selectCartItems) || []
+  const currentUser = useSelector(selectCurrentUser)
 
   const handleCheckout = () => {
     dispatch(setIsCartOpen(false))
@@ -41,7 +43,7 @@ const CartDropdown: FC = () => {
       <Button
         buttonClassType={BUTTON_TYPE_CLASSES.primary}
         buttonType="anchor"
-        linkRoute="/checkout"
+        linkRoute={currentUser ? "/checkout" : "/auth"}
         onClick={handleCheckout}
       >
         Checkout
