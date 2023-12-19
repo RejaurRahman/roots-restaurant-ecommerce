@@ -62,8 +62,8 @@ export type SetCartItems = ActionWithPayload<
   CART_ACTION_TYPES.SET_CART_ITEMS, CartItem[]
 >
 
-export const setIsCartOpen = withMatcher((boolean: boolean) =>
-  createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean)
+export const setIsCartOpen = withMatcher((isOpen: boolean) =>
+  createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, isOpen)
 )
 
 export const setCartItems = withMatcher((cartItems: CartItem[]) =>

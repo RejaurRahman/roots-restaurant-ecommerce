@@ -1,4 +1,8 @@
-import { FC, useState } from "react"
+import {
+  FC,
+  useEffect,
+  useState
+} from "react"
 import { useSelector } from "react-redux"
 
 import { Link } from "react-router-dom"
@@ -43,7 +47,13 @@ const Menu: FC = () => {
     setScrollPosition(currentPosition)
   }
 
-  window.addEventListener("scroll", handleScroll)
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <nav

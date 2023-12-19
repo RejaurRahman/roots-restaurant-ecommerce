@@ -25,7 +25,7 @@ const Checkout: FC = () => {
   return (
     <>
       <PageBanner label="Checkout" />
-      <Breadcrumbs label="Checkoct" />
+      <Breadcrumbs label="Checkout" />
       {cartItems.length > 0 ? (
         <div className="cart-container container">
           <p className="cart-status">

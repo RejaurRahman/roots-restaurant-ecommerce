@@ -1,6 +1,10 @@
 import { FC } from "react"
-import { useSelector } from "react-redux"
+import {
+  useDispatch,
+  useSelector
+} from "react-redux"
 
+import { setIsCartOpen } from "../../../store/cart/cart.action"
 import { selectCartItems } from "../../../store/cart/cart.selector"
 
 import Button, { BUTTON_TYPE_CLASSES } from "../../../components/Button/Button.component"
@@ -9,7 +13,12 @@ import CartProducts from "../CartProducts/CartProducts.component"
 import "./CartDropdown.styles.scss"
 
 const CartDropdown: FC = () => {
+  const dispatch = useDispatch()
   const cartItems = useSelector(selectCartItems) || []
+
+  const handleCheckout = () => {
+    dispatch(setIsCartOpen(false))
+  }
 
   return (
     <div className="cart-dropdown-container">
@@ -33,6 +42,7 @@ const CartDropdown: FC = () => {
         buttonClassType={BUTTON_TYPE_CLASSES.primary}
         buttonType="anchor"
         linkRoute="/checkout"
+        onClick={handleCheckout}
       >
         Checkout
       </Button>
