@@ -1,6 +1,5 @@
 import { FC } from "react"
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom"
 
 import {
   selectCartItems,
@@ -9,10 +8,9 @@ import {
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
 import CheckoutProduct from "./CheckoutProduct/CheckoutProduct.component"
+import EmptyCheckout from "./EmptyCheckout/EmptyCheckout.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
 import PaymentForm from "../../components/PaymentForm/PaymentForm.component"
-
-import emptyBasket from "../../assets/images/basket-icon.png"
 
 import "./Checkout.styles.scss"
 
@@ -64,22 +62,7 @@ const Checkout: FC = () => {
           <PaymentForm />
         </div>
       ) : (
-        <div className="container">
-          <div className="cart-empty">
-            <img
-              alt="Basket Icon"
-              className="cart-empty-image"
-              src={emptyBasket}
-            />
-            <p>Your basket is currently empty.</p>
-            <p>Fill your boots (and your basket)</p>
-            <p>
-              and{" "}
-              <Link to="/shop">continue shopping</Link>
-              .
-            </p>
-          </div>
-        </div>
+        <EmptyCheckout />
       )}
     </>
   )
