@@ -73,6 +73,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+## Testing payment form use Stripe Test card credentials
+
+Card Number
+
+```
+4242 4242 4242 4242
+```
+
+Date
+
+```
+12/34
+```
+
+CVC
+
+```
+567
+```
+
+Zip Code
+
+```
+12345
+```
+
 ## Netlify
 
 Login to Netlify account
