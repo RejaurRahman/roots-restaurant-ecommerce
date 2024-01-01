@@ -3,7 +3,11 @@ import {
   FormEvent,
   useState
 } from "react"
-import { useSelector } from "react-redux"
+import {
+  useDispatch,
+  useSelector
+} from "react-redux"
+import { Dispatch } from "@reduxjs/toolkit"
 import {
   CardElement,
   useStripe,
@@ -11,6 +15,7 @@ import {
 } from "@stripe/react-stripe-js"
 import { StripeCardElement } from "@stripe/stripe-js"
 
+import { clearCartItems } from "../../store/cart/cart.action"
 import { selectCartTotal } from "../../store/cart/cart.selector"
 import { selectCurrentUser } from "../../store/user/user.selector"
 
@@ -23,6 +28,7 @@ const ifValidCardElement = (
 ): card is StripeCardElement => card !== null
 
 const PaymentForm: FC = () => {
+  const dispatch = useDispatch<Dispatch>()
   const stripe = useStripe()
   const elements = useElements()
 
@@ -71,6 +77,8 @@ const PaymentForm: FC = () => {
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
         alert("Payment Successful!")
+
+        dispatch(clearCartItems())
       }
     }
   }

@@ -1,6 +1,9 @@
 import { AnyAction } from "redux"
 
-import { CartItem } from "./cart.types"
+import {
+  CART_ACTION_TYPES,
+  CartItem
+} from "./cart.types"
 import {
   setCartItems,
   setIsCartOpen
@@ -31,6 +34,13 @@ export const cartReducer = (
     return {
       ...state,
       cartItems: action.payload
+    }
+  }
+
+  if (action.type === CART_ACTION_TYPES.CLEAR_CART_ITEMS) {
+    return {
+      ...state,
+      cartItems: []
     }
   }
 
