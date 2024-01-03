@@ -30,9 +30,6 @@ const Checkout = lazy(() =>
 const Contact = lazy(() =>
   import("./routes/Contact/Contact.component")
 )
-const CoronavirusFAQ = lazy(() =>
-  import("./routes/Documents/CoronavirusFaq.component")
-)
 const FAQ = lazy(() =>
   import("./routes/Documents/Faq.component")
 )
@@ -90,7 +87,6 @@ const App: FC = () => {
                   <Route path="checkout" element={<Checkout/>}/>
                 </Route>
                 <Route path="contact" element={<Contact />} />
-                <Route path="coronavirus-faq" element={<CoronavirusFAQ />} />
                 <Route path="faq" element={<FAQ />} />
                 <Route index element={<Home />}  />
                 <Route path="privacy-policy" element={<PrivacyPolicy />} />

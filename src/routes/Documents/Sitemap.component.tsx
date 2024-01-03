@@ -52,9 +52,6 @@ const Sitemap: FC = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <Link to="/coronavirus-faq">Coronavirus FAQ</Link>
-              </li>
-              <li>
                 <Link to="/faq">FAQ</Link>
               </li>
               <li>

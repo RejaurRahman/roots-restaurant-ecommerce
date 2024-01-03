@@ -22,7 +22,7 @@ const Navigation: FC = () => {
                 {currentUser ? (
                   `Hello, ${currentUser.displayName.split(" ")[0]} ...`
                 ) : null}{" "}
-                Free Shipping on all orders
+                Welcome to Roots
               </span>
             </div>
             <div className="col-12 col-md-6 top-header-right-column">

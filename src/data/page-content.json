@@ -48,9 +48,9 @@
   "services_list": [
     {
       "colour": "#7D1B7E",
-      "heading": "Free Shipping",
-      "iconName": "truck",
-      "text": "On All Orders"
+      "heading": "Eat",
+      "iconName": "utensils",
+      "text": "In Store or Takeaway"
     },
     {
       "colour": "#C11B17",
@@ -141,12 +141,6 @@
     },
     {
       "ul_list": 2,
-      "text": "Coronavirus FAQ",
-      "href": "/coronavirus-faq",
-      "order": 3
-    },
-    {
-      "ul_list": 2,
       "text": "FAQ",
       "href": "/faq",
       "order": 2
@@ -173,7 +167,7 @@
       "ul_list": 2,
       "text": "Terms and Conditions",
       "href": "/terms-and-conditions",
-      "order": 4
+      "order": 3
     }
   ]
 }

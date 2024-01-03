@@ -134,22 +134,6 @@ const Sustainability: FC = () => {
                 <p>This mid year we took the choice to quit selling actually filtered water, and now offer simply shimmering water in aluminum jars or glass. We&apos;re at present sourcing a maintainable reusable water channel so individuals (who recently purchased still filtered water) can certainly appreciate faucet water.</p>
               </AccordionItem>
             </Accordion>
-
-            <h2 className="documents-accordion-heading">Carbon Emissions</h2>
-
-            <Accordion className="documents-accordion">
-              <AccordionItem
-                buttonClassName="documents-header"
-                contentClassName="documents-content"
-                index={7}
-                isList={false}
-                title="Do you use bicycles to deliver your food?"
-              >
-                <p>On the off chance that you&apos;ve strolled down a bustling London road over the most recent 5 years you&apos;ll know the number of conveyance vehicles fill the streets. Indeed, even before the 2013 blast of same day conveyances light products vehicles (LGVs) and HGVs represented 33% of street transport nitric and nitrogen oxide (NOx) emanations in Greater London.</p>
-                <p>To help offer a more certain other option, Fed by Roots Restaurant dispatched before this year conveying food by electric helped payload bicycles. Our little however completely framed company of 6 bicycles (in fact trikes as they have 3 wheels) take our natural, reasonably sourced and bundled food and drink from our Hoxton base, to workplaces and shared work environments everywhere on the city of London.</p>
-                <p>Bikes are splendid. They&apos;re the peaceful, ease and zero outflow alternative. By utilizing trikes not trucks we&apos;re diminishing clog, fossil fuel byproducts and clamor while improving air quality. That is a fourfold success!</p>
-              </AccordionItem>
-            </Accordion>
           </div>
         </div>
       </div>
