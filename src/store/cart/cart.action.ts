@@ -70,6 +70,25 @@ export const setCartItems = withMatcher((cartItems: CartItem[]) =>
   createAction(CART_ACTION_TYPES.SET_CART_ITEMS, cartItems)
 )
 
+export const addOrderStart = (userId: string | null, cartItems:CartItem[], totalAmount: number, uniqueId: string) => ({
+  type: CART_ACTION_TYPES.ADD_ORDER_START,
+  payload: {
+    cartItems,
+    totalAmount,
+    uniqueId,
+    userId
+  }
+})
+
+export const addOrderSuccess = () => ({
+  type: CART_ACTION_TYPES.ADD_ORDER_SUCCESS
+})
+
+export const addOrderFailure = (errorMessage:string | any) => ({
+  type: CART_ACTION_TYPES.ADD_ORDER_FAILURE,
+  payload: errorMessage
+})
+
 export const addItemToCart = (
   cartItems: CartItem[],
   productToAdd: CategoryItem

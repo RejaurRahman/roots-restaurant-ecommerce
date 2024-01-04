@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid"
 import {
   FC,
   FormEvent,
@@ -15,8 +16,14 @@ import {
 } from "@stripe/react-stripe-js"
 import { StripeCardElement } from "@stripe/stripe-js"
 
-import { clearCartItems } from "../../store/cart/cart.action"
-import { selectCartTotal } from "../../store/cart/cart.selector"
+import {
+  addOrderStart,
+  clearCartItems
+} from "../../store/cart/cart.action"
+import {
+  selectCartItems,
+  selectCartTotal
+} from "../../store/cart/cart.selector"
 import { selectCurrentUser } from "../../store/user/user.selector"
 
 import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button.component"
@@ -27,12 +34,23 @@ const ifValidCardElement = (
   card: StripeCardElement | null
 ): card is StripeCardElement => card !== null
 
-const PaymentForm: FC = () => {
+interface PaymentFormProps {
+  setOrderNumber?: (value: string) => void
+  setShowConfirmation?: (value: boolean) => void
+  setUserLatestOrder?: (value: any) => void
+}
+
+const PaymentForm: FC<PaymentFormProps> = ({
+  setOrderNumber,
+  setShowConfirmation,
+  setUserLatestOrder
+}) => {
   const dispatch = useDispatch<Dispatch>()
   const stripe = useStripe()
   const elements = useElements()
 
   const amount = useSelector(selectCartTotal)
+  const cartItems = useSelector(selectCartItems)
   const currentUser = useSelector(selectCurrentUser)
   const [isProcessingPayment, setIsProcessingPayment] = useState(false)
 
@@ -45,12 +63,16 @@ const PaymentForm: FC = () => {
 
     setIsProcessingPayment(true)
 
-    const response = await fetch("/.netlify/functions/create-payment-intent", {
+    const response = await fetch(
+      "/.netlify/functions/create-payment-intent",
+    {
       method: "post",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ amount: amount * 100 })
+      body: JSON.stringify({
+        amount: amount * 100
+      })
     }).then((res) => res.json())
 
     const {
@@ -76,7 +98,23 @@ const PaymentForm: FC = () => {
       alert(paymentResult.error.message)
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
-        alert("Payment Successful!")
+        if (setOrderNumber && setShowConfirmation && setUserLatestOrder) {
+          const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+          const uniqueId = uuidv4()
+
+          dispatch(
+            addOrderStart(
+              currentUser?.id ?? null,
+              cartItems,
+              totalAmount,
+              uniqueId
+            )
+          )
+
+          setOrderNumber(uniqueId ?? 0)
+          setShowConfirmation(true)
+          setUserLatestOrder(cartItems)
+        }
 
         dispatch(clearCartItems())
       }

@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app"
 import {
   getAuth,
-  signInWithRedirect,
   signInWithPopup,
+  signInWithRedirect,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -12,17 +12,19 @@ import {
   User
 } from "firebase/auth"
 import {
-  getFirestore,
+  addDoc,
+  collection,
   doc,
   getDoc,
-  setDoc,
-  collection,
-  writeBatch,
-  query,
   getDocs,
-  QueryDocumentSnapshot
+  getFirestore,
+  query,
+  QueryDocumentSnapshot,
+  setDoc,
+  writeBatch
 } from "firebase/firestore"
 
+import { CartItem } from "../../store/cart/cart.types"
 import { Category } from "../../store/categories/category.types"
 
 const firebaseConfig = {
@@ -86,6 +88,37 @@ export type UserData = {
   createdAt: Date
   displayName: string
   email: string
+  id?: string
+}
+
+export type OrderData = {
+  cartItems: CartItem[]
+  orderDate: Date
+  orderId: string
+  totalAmount: number
+  userId: string
+}
+
+export const createOrderDocument = async (
+  cartItems: CartItem[],
+  totalAmount: number,
+  orderId: string,
+  userId: string
+): Promise<any> => {
+  try {
+    const orderCollectionRef = collection(db, "orders")
+    const orderData: OrderData = {
+      cartItems,
+      orderDate: new Date(),
+      orderId,
+      totalAmount,
+      userId,
+    }
+
+    await addDoc(orderCollectionRef, orderData)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export const createUserDocumentFromAuth = async (

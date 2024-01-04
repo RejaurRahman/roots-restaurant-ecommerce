@@ -75,7 +75,9 @@ const App: FC = () => {
   })
 
   return (
-    <Suspense>
+    <Suspense
+      fallback={<Spinner />}
+    >
       {
         pageLoading ? (
           <>
