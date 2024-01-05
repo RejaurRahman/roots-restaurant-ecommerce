@@ -14,7 +14,6 @@ import {
 import { checkUserSession } from "./store/user/user.action"
 
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.component"
-import Spinner from "./components/Spinner/Spinner.component"
 
 import "./styles/styles.scss"
 
@@ -75,11 +74,9 @@ const App: FC = () => {
   })
 
   return (
-    <Suspense
-      fallback={<Spinner />}
-    >
+    <Suspense>
       {
-        pageLoading ? (
+        pageLoading && (
           <>
             <Routes>
               <Route path="/" element={<Navigation />}>
@@ -100,8 +97,6 @@ const App: FC = () => {
             </Routes>
             <Footer />
           </>
-        ) : (
-          <Spinner />
         )
       }
     </Suspense>
