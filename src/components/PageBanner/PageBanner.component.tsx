@@ -16,7 +16,9 @@ const PageBanner: FC<PageBannerProps> = ({
       <img
         alt="Vegetable Banner"
         className="banner-image"
+        height={148}
         src={BannerBg}
+        width={320}
       />
       <div className="banner-overlay" />
       <div className="container">

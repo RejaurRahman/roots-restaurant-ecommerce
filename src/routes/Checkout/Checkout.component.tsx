@@ -61,7 +61,9 @@ const Checkout: FC = () => {
             <img
               alt="Basket Icon"
               className="order-stamp-image"
+              height={240}
               src={emptyBasket}
+              width={256}
             />
             <p>
               Thank you for your recent order. We are pleased to confirm that we have received your order and it is currently being processed.

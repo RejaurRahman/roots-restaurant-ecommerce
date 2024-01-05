@@ -27,11 +27,11 @@ const FoundersList: FC = () => {
               key={index}
             >
               <LazyLoadImage
-                src={imagePath}
-                className="founders-image mx-auto"
                 alt={`${founder.heading} founder image`}
-                width={350}
-                height={407}
+                className="founders-image mx-auto"
+                height={344}
+                src={imagePath}
+                width={296}
               />
               <h3 className="founders-name">{founder.heading}</h3>
               <p className="founders-copy">{founder.content}</p>

@@ -51,17 +51,17 @@ const TextVideo: FC = () => {
           {
             isDesktop ? (
               <LazyLoadImage
-                src={aboutDesktop}
                 alt="Desktop About Image"
-                width={1280}
                 height={1920}
+                src={aboutDesktop}
+                width={1280}
               />
             ) : (
               <LazyLoadImage
-                src={aboutMobile}
                 alt="Mobile About Image"
-                width={991}
-                height={631}
+                height={188}
+                src={aboutMobile}
+                width={296}
               />
             )
           }

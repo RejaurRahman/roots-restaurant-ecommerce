@@ -48,8 +48,8 @@ const Footer: FC = () => {
             >
               <LazyLoadImage
                 alt="Roots Restaurant"
-                src={Logo}
                 height={55}
+                src={Logo}
                 width={55}
               />
             </Link>

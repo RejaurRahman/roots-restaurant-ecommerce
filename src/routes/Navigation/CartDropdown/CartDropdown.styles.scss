@@ -1,14 +1,29 @@
 .cart-dropdown-container {
+  @media screen and (max-width: 374px) {
+    width: calc(100% - 24px) !important;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 300px !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    top: 55px;
+    right: 12px;
+  }
+
+  @media screen and (min-width: 992px) {
+    top: 90px;
+    right: 40px;
+  }
+
   position: absolute;
-  width: 300px !important;
   height: 340px;
   display: flex;
   flex-flow: column;
   padding: 20px;
   border: 1px solid #000;
   background-color: #fff;
-  top: 90px;
-  right: 40px;
   z-index: 5;
 
   .cart-dropdown-empty {

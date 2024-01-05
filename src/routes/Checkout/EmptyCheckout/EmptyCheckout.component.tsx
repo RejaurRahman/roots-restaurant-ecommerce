@@ -12,7 +12,9 @@ const EmptyCheckout: FC = () => {
         <img
           alt="Basket Icon"
           className="cart-empty-image"
+          height={240}
           src={emptyBasket}
+          width={256}
         />
         <p>Your basket is currently empty.</p>
         <p>Fill your boots (and your basket)</p>

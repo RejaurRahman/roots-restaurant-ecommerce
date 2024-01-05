@@ -38,9 +38,9 @@ const TextMedia: FC = () => {
               <div className="col-12 col-lg-6 text-media-image">
                 <LazyLoadImage
                   alt={`${text_media.heading} image`}
+                  height={296}
                   src={imagePath}
-                  height={365}
-                  width={460}
+                  width={335}
                 />
               </div>
             </div>

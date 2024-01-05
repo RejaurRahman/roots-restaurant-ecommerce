@@ -40,7 +40,9 @@ const CheckoutProduct: FC<CheckoutProductProps> = ({ cartItem }) => {
           <LazyLoadImage
             alt={name}
             className="cart-table-image"
+            height={88}
             src={imageUrl}
+            width={132}
           />
         </div>
         <div className="cart-table-seventh">

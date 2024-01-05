@@ -55,7 +55,9 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
       <LazyLoadImage
         alt={name}
         className="product-item-image"
+        height={197}
         src={imageUrl}
+        width={296}
       />
       <div className="product-item-content">
         <div className="product-item-top">

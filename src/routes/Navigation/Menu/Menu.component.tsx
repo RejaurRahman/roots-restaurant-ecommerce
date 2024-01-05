@@ -70,8 +70,8 @@ const Menu: FC = () => {
               <img
                 alt="Roots Restaurant"
                 className="navbar-logo"
-                src={Logo}
                 height={55}
+                src={Logo}
                 width={55}
               />
             </Link>

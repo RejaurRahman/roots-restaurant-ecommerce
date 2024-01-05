@@ -1,5 +1,7 @@
 import { FC, useRef } from "react"
 
+import { LazyLoadImage } from "react-lazy-load-image-component"
+
 import { Autoplay, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import type SwiperCore from "swiper"
@@ -17,7 +19,6 @@ import "./MainBanner.styles.scss"
 const MainBanner: FC = () => {
   const swiperRef = useRef<SwiperCore>()
   const imageBanners = [
-    ImageBanner1,
     ImageBanner2,
     ImageBanner3
   ]
@@ -43,11 +44,23 @@ const MainBanner: FC = () => {
         <div className="container swiper-pagination-custom" />
         {data.main_banner.map((banner, index) => (
           <SwiperSlide className="bannerSlide" key={`image-${index + 1}`}>
-            <img
-              className="bannerImage"
-              src={imageBanners[index % imageBanners.length]}
-              alt={`Banner ${index + 1}`}
-            />
+            {index === 0 ? (
+              <img
+                alt="Banner 1"
+                className="bannerImage"
+                height={363}
+                src={ImageBanner1}
+                width={320}
+              />
+            ) : (
+              <LazyLoadImage
+                alt={`Banner ${index + 1}`}
+                className="bannerImage"
+                height={363}
+                src={imageBanners[index % imageBanners.length]}
+                width={320}
+              />
+            )}
             <div className="container">
               <div className="bannerText">
                 <p>{banner.bannerText}</p>
