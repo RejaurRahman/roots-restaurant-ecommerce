@@ -32,6 +32,7 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
           {title}
         </h2>
         <Link
+          aria-label="View Category"
           className="shop-category-button"
           to={title}
         >

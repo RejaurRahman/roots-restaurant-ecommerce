@@ -43,6 +43,7 @@ const Footer: FC = () => {
         <div className="row">
           <div className="col-12 col-lg-4">
             <Link
+              aria-label="Roots Restaurant"
               className="footer-logo"
               to="/"
             >
@@ -75,9 +76,9 @@ const Footer: FC = () => {
             </ul>
           </div>
           <div className="col-12 col-lg-4">
-            <h4 className="footer-heading">
+            <h2 className="footer-heading">
               {data.footer_copy.links_heading}
-            </h4>
+            </h2>
             <div className="footer-pages">
               <ul className="footer-pages-list">
                 {data.footer_links
@@ -86,6 +87,7 @@ const Footer: FC = () => {
                   .map((link, index) => (
                     <li key={index}>
                       <Link
+                        aria-label={link.text}
                         className={`footer-pages-link ${
                           link.href === location.pathname
                             ? "footer-pages-link-active"
@@ -105,6 +107,7 @@ const Footer: FC = () => {
                   .map((link, index) => (
                     <li key={index}>
                       <Link
+                        aria-label={link.text}
                         className={`footer-pages-link ${
                           link.href === location.pathname
                             ? "footer-pages-link-active"
@@ -120,12 +123,13 @@ const Footer: FC = () => {
             </div>
           </div>
           <div className="col-12 col-lg-4">
-            <h4 className="footer-heading">{data.footer_copy.newsletter_heading}</h4>
+            <h3 className="footer-heading">{data.footer_copy.newsletter_heading}</h3>
             <p className="footer-bodycopy">{data.footer_copy.newsletter_copy}</p>
             <FooterForm />
             <ul className="footer-social">
               <li className="footer-social-list">
                 <Link
+                  aria-label="FaceBook"
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"
@@ -138,6 +142,7 @@ const Footer: FC = () => {
               </li>
               <li className="footer-social-list">
                 <Link
+                  aria-label="Twitter"
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"
@@ -150,6 +155,7 @@ const Footer: FC = () => {
               </li>
               <li className="footer-social-list">
                 <Link
+                  aria-label="Instagram"
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"

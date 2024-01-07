@@ -20,7 +20,12 @@ const EmptyCheckout: FC = () => {
         <p>Fill your boots (and your basket)</p>
         <p>
           and{" "}
-          <Link to="/shop">continue shopping</Link>
+          <Link
+            aria-label="Shop"
+            to="/shop"
+          >
+            continue shopping
+          </Link>
           .
         </p>
       </div>

@@ -17,54 +17,134 @@ const Sitemap: FC = () => {
           <div className="col-12">
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link
+                  aria-label="Home"
+                  to="/"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link
+                  aria-label="About"
+                  to="/about"
+                >
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/shop">Shop</Link>
+                <Link
+                  aria-label="Shop"
+                  to="/shop"
+                >
+                  Shop
+                </Link>
                 <ul>
                   <li>
-                    <Link to="/shop/curry">Curry</Link>
+                    <Link
+                      aria-label="Curry"
+                      to="/shop/curry"
+                    >
+                      Curry
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/deserts">Deserts</Link>
+                    <Link
+                      aria-label="Deserts"
+                      to="/shop/deserts"
+                    >
+                      Deserts
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/drinks">Drinks</Link>
+                    <Link
+                      aria-label="Drinks"
+                      to="/shop/drinks"
+                    >
+                      Drinks
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/pasta">Pasta</Link>
+                    <Link
+                      aria-label="Pasta"
+                      to="/shop/pasta"
+                    >
+                      Pasta
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/pizza">Pizza</Link>
+                    <Link
+                      aria-label="Pizza"
+                      to="/shop/pizza"
+                    >
+                      Pizza
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/salad">Salad</Link>
+                    <Link
+                      aria-label="Salad"
+                      to="/shop/salad"
+                    >
+                      Salad
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/shop/soup">Soup</Link>
+                    <Link
+                      aria-label="Soup"
+                      to="/shop/soup"
+                    >
+                      Soup
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link
+                  aria-label="Contact"
+                  to="/contact"
+                >
+                  Contact
+                </Link>
               </li>
               <li>
-                <Link to="/faq">FAQ</Link>
+                <Link
+                  aria-label="FAQ"
+                  to="/faq"
+                >
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link to="/sitemap">Our Sitemap</Link>
+                <Link
+                  aria-label="Our Sitemap"
+                  to="/sitemap"
+                >
+                  Our Sitemap
+                </Link>
               </li>
               <li>
-                <Link to="/privacy-policy">Privacy Policy</Link>
+                <Link
+                  aria-label="Privacy Policy"
+                  to="/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/sustainability">Sustainability</Link>
+                <Link
+                  aria-label="Sustainability"
+                  to="/sustainability"
+                >
+                  Sustainability
+                </Link>
               </li>
               <li>
-                <Link to="/terms-and-conditions">Terms and Conditions</Link>
+                <Link
+                  aria-label="Terms and Conditions"
+                  to="/terms-and-conditions"
+                >
+                  Terms and Conditions
+                </Link>
               </li>
             </ul>
           </div>

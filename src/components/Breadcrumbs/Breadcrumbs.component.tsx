@@ -18,7 +18,12 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <Link to="/">Home</Link>
+                <Link
+                  aria-label="Home"
+                  to="/"
+                >
+                  Home
+                </Link>
               </li>
               <li
                 aria-current="page"

@@ -68,7 +68,7 @@ const Faq: FC = () => {
                 isList={false}
                 title="I think I&apos;ve found a problem with the website; what should I do?"
               >
-                <p>Please email us the details, ideally sending a screenshot as well to <a href="mailto:info@rootsrestaurant.com">info@rootsrestaurant.com</a>. Thanks for your help!</p>
+                <p>Please email us the details, ideally sending a screenshot as well to <a aria-label="Roots Restaurat Mail To" href="mailto:info@rootsrestaurant.com">info@rootsrestaurant.com</a>. Thanks for your help!</p>
               </AccordionItem>
               <AccordionItem
                 buttonClassName="documents-header"
@@ -77,7 +77,7 @@ const Faq: FC = () => {
                 isList={false}
                 title="How do I give feedback on the website?"
               >
-                <p>Kindly email us at: <a href="mailto:info@rootsrestaurant.com">info@rootsrestaurant.com</a>. We truly appreciate your criticism on our sites and application. It&apos;s a splendid path for us to get some answers concerning what we&apos;re doing well, and furthermore what we actually need to take a gander at!</p>
+                <p>Kindly email us at: <a aria-label="Roots Restaurat Mail To" href="mailto:info@rootsrestaurant.com">info@rootsrestaurant.com</a>. We truly appreciate your criticism on our sites and application. It&apos;s a splendid path for us to get some answers concerning what we&apos;re doing well, and furthermore what we actually need to take a gander at!</p>
               </AccordionItem>
               <AccordionItem
                 buttonClassName="documents-header"
@@ -86,7 +86,7 @@ const Faq: FC = () => {
                 isList={false}
                 title="Can I suggest a product?"
               >
-                <p>Our Producer Team are consistently on the chase for new and intriguing nourishments, so on the off chance that there&apos;s something you&apos;d prefer to see on the site, at that point kindly let us know by means of our <a href="/contact">Contact Page</a></p>
+                <p>Our Producer Team are consistently on the chase for new and intriguing nourishments, so on the off chance that there&apos;s something you&apos;d prefer to see on the site, at that point kindly let us know by means of our <a aria-label="Contact" href="/contact">Contact Page</a></p>
               </AccordionItem>
             </Accordion>
           </div>

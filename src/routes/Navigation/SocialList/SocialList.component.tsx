@@ -17,6 +17,7 @@ const SocialList: FC = () => {
     <ul className="top-header-social-list">
       <li className="top-header-social-item">
         <Link
+          aria-label="FaceBook"
           className="top-header-social-link"
           rel="noreferrer"
           target="_blank"
@@ -29,6 +30,7 @@ const SocialList: FC = () => {
       </li>
       <li className="top-header-social-item">
         <Link
+          aria-label="Twitter"
           className="top-header-social-link"
           rel="noreferrer"
           target="_blank"
@@ -41,6 +43,7 @@ const SocialList: FC = () => {
       </li>
       <li className="top-header-social-item">
         <Link
+          aria-label="Instagram"
           className="top-header-social-link"
           rel="noreferrer"
           target="_blank"

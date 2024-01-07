@@ -64,6 +64,7 @@ const Menu: FC = () => {
         <div className="row navbar-row">
           <div className="col-6 col-lg-11 navbar-left">
             <Link
+              aria-label="Roots Restaurant"
               className="navbar-brand"
               to="/"
             >

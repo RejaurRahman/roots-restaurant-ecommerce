@@ -49,6 +49,7 @@ const MenuList: FC<MenuListProps> = ({ showModal }) => {
             key={index}
           >
             <Link
+              aria-label="Menu page"
               aria-current="page"
               className={`nav-link navbar-link mx-lg-3 ${isActive(link.href) ? "active" : ""}`.trim()}
               to={link.href}
@@ -67,6 +68,7 @@ const MenuList: FC<MenuListProps> = ({ showModal }) => {
             </span>
           ) : (
             <Link
+              aria-label="Login"
               className={`nav-link navbar-link mx-lg-3 ${location.pathname.includes("/auth") ? "active" : ""}`.trim()}
               to="/auth"
             >

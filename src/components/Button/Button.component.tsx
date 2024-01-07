@@ -34,6 +34,7 @@ const Button: FC<ButtonProps> = ({
 
     return (
       <Link
+        aria-label="Button"
         className={`button-container ${BUTTON_TYPE_CLASSES[buttonClassType as keyof typeof BUTTON_TYPE_CLASSES]}`}
         to={linkRoute}
         {...anchorProps}
