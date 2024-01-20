@@ -63,15 +63,8 @@ const App: FC = () => {
 
   useEffect(() => {
     dispatch(checkUserSession())
-  })
-
-  useEffect(() => {
-    dispatch(checkUserSession())
-
-    setTimeout(() => {
-      setPageLoading(true)
-    }, 2000)
-  })
+    setPageLoading(true)
+  }, [dispatch])
 
   return (
     <Suspense>
