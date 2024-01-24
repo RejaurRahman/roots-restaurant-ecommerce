@@ -1,14 +1,15 @@
 import { initializeApp } from "firebase/app"
 import {
-  getAuth,
+  browserLocalPersistence,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  initializeAuth,
+  NextOrObserver,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
-  NextOrObserver,
   User
 } from "firebase/auth"
 import {
@@ -46,7 +47,10 @@ googleProvider.setCustomParameters({
   prompt: "select_account"
 })
 
-export const auth = getAuth()
+export const auth = initializeAuth(firebaseApp, {
+  persistence: browserLocalPersistence
+})
+
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
 export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider)
 export const db = getFirestore()
