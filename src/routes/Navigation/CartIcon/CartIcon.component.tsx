@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import {
@@ -7,7 +7,6 @@ import {
 } from "../../../store/cart/cart.selector"
 import { setIsCartOpen } from "../../../store/cart/cart.action"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -16,10 +15,6 @@ import "./CartIcon.styles.scss"
 interface CartIconProps {
   cartDisplay: boolean
 }
-
-library.add(
-  faBagShopping
-)
 
 const CartIcon: FC<CartIconProps> = ({ cartDisplay }) => {
   const dispatch = useDispatch()

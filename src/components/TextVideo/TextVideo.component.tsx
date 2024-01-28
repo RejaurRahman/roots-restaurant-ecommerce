@@ -6,7 +6,6 @@ import useScreenWidth from "../../hook/useScreenWidth"
 
 import data from "../../data/page-content.json"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faPlay } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -18,10 +17,6 @@ import aboutVideo from "../../assets/images/about/video.mp4"
 import aboutVideoImg from "../../assets/images/about/video.jpg"
 
 import "./TextVideo.styles.scss"
-
-library.add(
-  faPlay
-)
 
 const TextVideo: FC = () => {
   const [showModal, setShowModal] = useState(false)
@@ -73,7 +68,9 @@ const TextVideo: FC = () => {
             data-bs-target={videoModalRef}
             onClick={handleClick}
           >
-            <FontAwesomeIcon icon={faPlay} />
+            <FontAwesomeIcon
+              icon={faPlay}
+            />
           </button>
 
           {showModal && createPortal(

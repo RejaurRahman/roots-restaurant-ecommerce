@@ -6,7 +6,6 @@ import type SwiperCore from "swiper"
 
 import useScreenWidth from "../../hook/useScreenWidth"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faRightLeft } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -16,8 +15,6 @@ import DirectoryItem from "../DirectoryItem/DirectoryItem.component"
 import "swiper/css"
 
 import "./Directory.styles.scss"
-
-library.add(faRightLeft)
 
 interface DirectoryProps {
   categories: any[]

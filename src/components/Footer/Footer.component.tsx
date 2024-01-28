@@ -1,9 +1,16 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import { Link, useLocation } from "react-router-dom"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
+import {
+  faCcAmex,
+  faCcMastercard,
+  faCcPaypal,
+  faCcVisa,
+  faFacebookF,
+  faInstagram,
+  faTwitter
+} from "@fortawesome/free-brands-svg-icons"
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -14,11 +21,6 @@ import Logo from "../../assets/images/logo.png"
 import data from "../../data/page-content.json"
 
 import "./Footer.styles.scss"
-
-library.add(
-  faAngleUp,
-  fab
-)
 
 const Footer: FC = () => {
   const currentYear = new Date().getFullYear()
@@ -136,7 +138,7 @@ const Footer: FC = () => {
                   to="https://en-gb.facebook.com/"
                 >
                   <FontAwesomeIcon
-                    icon={["fab", "facebook-f"]}
+                    icon={faFacebookF}
                   />
                 </Link>
               </li>
@@ -149,7 +151,7 @@ const Footer: FC = () => {
                   to="https://twitter.com/"
                 >
                   <FontAwesomeIcon
-                    icon={["fab", "twitter"]}
+                    icon={faTwitter}
                   />
                 </Link>
               </li>
@@ -162,7 +164,7 @@ const Footer: FC = () => {
                   to="https://www.instagram.com/"
                 >
                   <FontAwesomeIcon
-                    icon={["fab", "instagram"]}
+                    icon={faInstagram}
                   />
                 </Link>
               </li>
@@ -180,25 +182,25 @@ const Footer: FC = () => {
               <ul className="footer-payment">
                 <li className="footer-payment-list">
                   <FontAwesomeIcon
-                    icon={["fab", "cc-visa"]}
+                    icon={faCcVisa}
                     size="2x"
                   />
                 </li>
                 <li className="footer-payment-list">
                   <FontAwesomeIcon
-                    icon={["fab", "cc-mastercard"]}
+                    icon={faCcMastercard}
                     size="2x"
                   />
                 </li>
                 <li className="footer-payment-list">
                   <FontAwesomeIcon
-                    icon={["fab", "cc-paypal"]}
+                    icon={faCcPaypal}
                     size="2x"
                   />
                 </li>
                 <li className="footer-payment-list">
                   <FontAwesomeIcon
-                    icon={["fab", "cc-amex"]}
+                    icon={faCcAmex}
                     size="2x"
                   />
                 </li>

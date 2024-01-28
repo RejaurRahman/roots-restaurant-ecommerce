@@ -2,15 +2,15 @@ import { FC } from "react"
 
 import { Link } from "react-router-dom"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import "./SocialList.styles.scss"
 
-library.add(
-  fab
-)
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons"
 
 const SocialList: FC = () => {
   return (
@@ -24,7 +24,7 @@ const SocialList: FC = () => {
           to="https://en-gb.facebook.com/"
         >
           <FontAwesomeIcon
-            icon={["fab", "facebook-f"]}
+            icon={faFacebookF}
           />
         </Link>
       </li>
@@ -37,7 +37,7 @@ const SocialList: FC = () => {
           to="https://twitter.com/"
         >
           <FontAwesomeIcon
-            icon={["fab", "twitter"]}
+            icon={faTwitter}
           />
         </Link>
       </li>
@@ -50,7 +50,7 @@ const SocialList: FC = () => {
           to="https://www.instagram.com/"
         >
           <FontAwesomeIcon
-            icon={["fab", "instagram"]}
+            icon={faInstagram}
           />
         </Link>
       </li>

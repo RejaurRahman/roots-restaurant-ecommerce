@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { Link } from "react-router-dom"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -10,10 +9,6 @@ import { CategoryItem } from "../../store/categories/category.types"
 import ProductCard from "../ProductCard/ProductCard.component"
 
 import "./CategoryPreview.styles.scss"
-
-library.add(
-  faChevronRight
-)
 
 interface CategoryPreviewProps {
   title: string

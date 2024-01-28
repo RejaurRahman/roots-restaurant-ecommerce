@@ -4,13 +4,10 @@ import {
   useState
  } from "react"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import "./AccordionItem.styles.scss"
-
-library.add(faChevronDown)
 
 interface AccordionItemProps {
   buttonClassName?: string
