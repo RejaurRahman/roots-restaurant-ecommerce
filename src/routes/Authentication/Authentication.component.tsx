@@ -1,10 +1,11 @@
-import { FC, useState } from "react"
+import { FC, lazy, Suspense, useState } from "react"
 
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs.component"
-import SignIn from "../../components/SignIn/SignIn.component"
-import SignUp from "../../components/SignUp/SignUp.component"
 
 import "./Authentication.style.scss"
+
+const SignIn = lazy(() => import("../../components/SignIn/SignIn.component"))
+const SignUp = lazy(() => import("../../components/SignUp/SignUp.component"))
 
 const Authentication: FC = () => {
   const [showSignIn, setShowSignIn] = useState(true)
@@ -14,14 +15,16 @@ const Authentication: FC = () => {
   }
 
   return (
-    <div className="authentication-container container">
-      <Breadcrumbs label={showSignIn ? "Login" : "Create Account"} />
-      {showSignIn ? (
-        <SignIn toggleComponent={toggleAuthenticationComponent} />
-      ) : (
-        <SignUp toggleComponent={toggleAuthenticationComponent} />
-      )}
-    </div>
+    <Suspense>
+      <div className="authentication-container container">
+        <Breadcrumbs label={showSignIn ? "Login" : "Create Account"} />
+        {showSignIn ? (
+          <SignIn toggleComponent={toggleAuthenticationComponent} />
+        ) : (
+          <SignUp toggleComponent={toggleAuthenticationComponent} />
+        )}
+      </div>
+    </Suspense>
   )
 }
 

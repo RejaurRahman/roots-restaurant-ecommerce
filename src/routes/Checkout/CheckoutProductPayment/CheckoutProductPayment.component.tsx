@@ -1,12 +1,13 @@
-import { FC } from "react"
+import { FC, lazy, Suspense } from "react"
 import { useSelector } from "react-redux"
 
 import { selectCartTotal } from "../../../store/cart/cart.selector"
 
 import CheckoutProduct from "../CheckoutProduct/CheckoutProduct.component"
-import PaymentForm from "../../../components/PaymentForm/PaymentForm.component"
 
 import "../Checkout.styles.scss"
+
+const PaymentForm = lazy(() => import("../../../components/PaymentForm/PaymentForm.component"))
 
 interface CartItem {
   calories: number
@@ -59,11 +60,13 @@ const CheckoutProductPayment: FC<CheckoutProductPaymentProps> = ({
         </div>
       </div>
       <div className="total">Total: {formattedPrice}</div>
-      <PaymentForm
-        setOrderNumber={setOrderNumber}
-        setShowConfirmation={setShowConfirmation}
-        setUserLatestOrder={setUserLatestOrder}
-      />
+      <Suspense>
+        <PaymentForm
+          setOrderNumber={setOrderNumber}
+          setShowConfirmation={setShowConfirmation}
+          setUserLatestOrder={setUserLatestOrder}
+        />
+      </Suspense>
     </div>
   )
 }

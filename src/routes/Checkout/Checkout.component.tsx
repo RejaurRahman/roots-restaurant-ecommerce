@@ -4,9 +4,6 @@ import {
 } from "react"
 import { useSelector } from "react-redux"
 
-import { Elements } from "@stripe/react-stripe-js"
-import { stripePromise } from "../../utils/stripe/stripe.utils"
-
 import { selectCartItems } from "../../store/cart/cart.selector"
 import { selectCurrentUser } from "../../store/user/user.selector"
 
@@ -38,7 +35,7 @@ const Checkout: FC = () => {
   const totalAmount = userLatestOrder.reduce((total, order) => total + order.price, 0)
 
   return (
-    <Elements stripe={stripePromise}>
+    <>
       <PageBanner label="Checkout" />
       <Breadcrumbs label="Checkout" />
       {cartItems.length > 0 ? (
@@ -122,7 +119,7 @@ const Checkout: FC = () => {
       ) : (
         <EmptyCheckout />
       )}
-    </Elements>
+    </>
   )
 }
 
