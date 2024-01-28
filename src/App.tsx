@@ -1,7 +1,5 @@
 import {
   FC,
-  lazy,
-  Suspense,
   useEffect
 } from "react"
 import { useDispatch } from "react-redux"
@@ -16,45 +14,19 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute.component"
 
 import "./styles/styles.scss"
 
-const About = lazy(() =>
-  import("./routes/About/About.component")
-)
-const Authentication = lazy(() =>
-  import("./routes/Authentication/Authentication.component")
-)
-const Checkout = lazy(() =>
-  import("./routes/Checkout/Checkout.component")
-)
-const Contact = lazy(() =>
-  import("./routes/Contact/Contact.component")
-)
-const FAQ = lazy(() =>
-  import("./routes/Documents/Faq.component")
-)
-const Footer = lazy(() =>
-  import("./components/Footer/Footer.component")
-)
-const Home = lazy(() =>
-  import("./routes/Home/Home.component")
-)
-const Navigation = lazy(() =>
-  import("./routes/Navigation/Navigation.component")
-)
-const PrivacyPolicy = lazy(() =>
-  import("./routes/Documents/PrivacyPolicy.component")
-)
-const Shop = lazy(() =>
-  import("./routes/Shop/Shop.component")
-)
-const Sitemap = lazy(() =>
-  import("./routes/Documents/Sitemap.component")
-)
-const Sustainability = lazy(() =>
-  import("./routes/Documents/Sustainability.component")
-)
-const TermsConditions = lazy(() =>
-  import("./routes/Documents/TermsConditions.component")
-)
+import About from "./routes/About/About.component"
+import Authentication from "./routes/Authentication/Authentication.component"
+import Checkout from "./routes/Checkout/Checkout.component"
+import Contact from "./routes/Contact/Contact.component"
+import FAQ from "./routes/Documents/Faq.component"
+import Footer from "./components/Footer/Footer.component"
+import Home from "./routes/Home/Home.component"
+import Navigation from "./routes/Navigation/Navigation.component"
+import PrivacyPolicy from "./routes/Documents/PrivacyPolicy.component"
+import Shop from "./routes/Shop/Shop.component"
+import Sitemap from "./routes/Documents/Sitemap.component"
+import Sustainability from "./routes/Documents/Sustainability.component"
+import TermsConditions from "./routes/Documents/TermsConditions.component"
 
 const App: FC = () => {
   const dispatch = useDispatch()
@@ -64,7 +36,7 @@ const App: FC = () => {
   })
 
   return (
-    <Suspense>
+    <>
       {
         <>
           <Routes>
@@ -87,7 +59,7 @@ const App: FC = () => {
           <Footer />
         </>
       }
-    </Suspense>
+    </>
   )
 }
 
