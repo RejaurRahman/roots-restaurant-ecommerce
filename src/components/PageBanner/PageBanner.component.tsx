@@ -1,6 +1,6 @@
 import { FC } from "react"
 
-import BannerBg from "../../assets/images/shared/banner.jpg"
+import BannerBg from "../../assets/images/shared/banner.webp"
 
 import "./PageBanner.styles.scss"
 

@@ -12,7 +12,7 @@ import CheckoutProductPayment from "./CheckoutProductPayment/CheckoutProductPaym
 import EmptyCheckout from "./EmptyCheckout/EmptyCheckout.component"
 import PageBanner from "../../components/PageBanner/PageBanner.component"
 
-import emptyBasket from "../../assets/images/basket-icon.png"
+import emptyBasket from "../../assets/images/basket-icon.webp"
 
 interface CartItem {
   calories: number

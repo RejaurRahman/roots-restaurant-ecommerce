@@ -7,9 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import type SwiperCore from "swiper"
 
 import data from "../../data/page-content.json"
-import ImageBanner1 from "../../assets/images/home/home-slide-1.jpg"
-import ImageBanner2 from "../../assets/images/home/home-slide-2.jpg"
-import ImageBanner3 from "../../assets/images/home/home-slide-3.jpg"
+import ImageBanner1 from "../../assets/images/home/home-slide-1.webp"
+import ImageBanner2 from "../../assets/images/home/home-slide-2.webp"
+import ImageBanner3 from "../../assets/images/home/home-slide-3.webp"
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import "swiper/css"
