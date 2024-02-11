@@ -50,6 +50,7 @@ const Directory: FC<DirectoryProps> = ({ categories }) => {
         swiperRef.current = swiper
       }}
       slidesPerView="auto"
+      speed={700}
       {...swiperOptions}
     >
       {!isDesktop && (

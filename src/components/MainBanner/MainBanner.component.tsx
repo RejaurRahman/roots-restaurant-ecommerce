@@ -40,6 +40,7 @@ const MainBanner: FC = () => {
           clickable: true
         }}
         slidesPerView="auto"
+        speed={700}
       >
         <div className="container swiper-pagination-custom" />
         {data.main_banner.map((banner, index) => (
